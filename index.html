@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050507">
+
+<title>Landing Pages para negócios | Fernando Andrade</title>
+<meta name="description" content="Landing pages sob medida para empresas que investem em anúncios. Estrutura de conversão, copy e design feitos pra transformar o clique pago em cliente. Projetos a partir de R$ 1.347.">
+<link rel="canonical" href="https://ferandrade.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Fernando Andrade">
+<meta property="og:title" content="Landing Pages para negócios | Fernando Andrade">
+<meta property="og:description" content="Uma página bem feita decide se o clique que você pagou vira cliente ou vira custo. +150 projetos desenvolvidos.">
+<meta property="og:url" content="https://ferandrade.com.br/">
+<meta property="og:image" content="https://ferandrade.com.br/assets/cases/Wish.webp">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WWJBQ8DZ');</script>
+<!-- End Google Tag Manager -->
+
+<!-- LCP: fontes e retrato da primeira dobra saem na frente -->
+<link rel="preload" as="font" type="font/otf" href="assets/fonts/NeueMontreal-Regular.otf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="assets/fonts/AwesomeSerif-Italic-VF.ttf" crossorigin>
+<link rel="preload" as="image" href="assets/fernando/fer.webp" fetchpriority="high">
+<link rel="preload" as="image" href="assets/fernando/ferLogo.webp">
+
+<link rel="icon" href="assets/fernando/ferLogo.webp" type="image/webp">
+
+<style>
+html{background:#050507}
+body{margin:0;background:#050507}
+
+/* Sem @import: ele serializa o download e atrasa o first paint.
+   As duas fontes da primeira dobra vão com <link rel="preload"> no <head>. */
+@font-face{
+  font-family:"Neue Montreal";
+  src:url("assets/fonts/NeueMontreal-Regular.otf") format("opentype");
+  font-weight:400 500;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Neue Montreal";
+  src:url("assets/fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-weight:600 900;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:"Awesome Serif";
+  src:url("assets/fonts/AwesomeSerif-Italic-VF.ttf") format("truetype-variations"),
+      url("assets/fonts/AwesomeSerif-Italic-VF.ttf") format("truetype");
+  font-weight:100 900;
+  font-style:italic;
+  font-display:swap;
+}
+
+@property --ndw-ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@property --ndw-sweep{syntax:'<percentage>';initial-value:-40%;inherits:false}
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+.ndw{
+  --bg:#050507;
+  --bg-2:#08090C;
+  --surface:#141720;
+  --surface-2:#0E1016;
+  --text:#E6E6E6;
+  --white:#FFFFFF;
+  --muted:#8F8B85;
+  --muted-2:#5F5C58;
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.13);
+  --good:#4ADE80;
+  --bad:#F87171;
+  --warm:#C8A988;
+  /* pilha local: zero request externo no caminho crítico */
+  --f-title:"Neue Montreal",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --f-serif:"Awesome Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --t-fast:.28s;--t:.45s;--t-slow:.8s;
+
+  /* escala de raio: um valor por nível de profundidade, nada solto */
+  --r-xs:8px;--r-sm:12px;--r:16px;--r-md:20px;--r-lg:24px;--r-xl:32px;
+
+  /* sombras em camadas: contato + difusa + ambiente. É o que dá volume de verdade */
+  --sh-sm:0 1px 2px rgba(0,0,0,.4),0 4px 10px -4px rgba(0,0,0,.55);
+  --sh-md:0 2px 4px rgba(0,0,0,.4),0 12px 24px -10px rgba(0,0,0,.7),0 30px 50px -28px rgba(0,0,0,.6);
+  --sh-lg:0 2px 6px rgba(0,0,0,.45),0 18px 40px -16px rgba(0,0,0,.75),0 50px 90px -40px rgba(0,0,0,.9);
+  /* fio de luz no topo das superfícies elevadas */
+  --edge:inset 0 1px 0 rgba(255,255,255,.07);
+  --edge-2:inset 0 1px 0 rgba(255,255,255,.11);
+
+  --wrap:1200px;
+
+  position:relative;
+  width:100%;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.ndw *,.ndw *::before,.ndw *::after{box-sizing:border-box;margin:0;padding:0}
+.ndw a{color:inherit;text-decoration:none}
+.ndw button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;box-shadow:none;text-transform:none;letter-spacing:inherit}
+.ndw img{display:block;max-width:100%}
+.ndw svg{display:block;flex-shrink:0}
+.ndw ::selection{background:#E6E6E6;color:#0B0B0E}
+.ndw :focus-visible{outline:2px solid var(--text);outline-offset:3px;border-radius:var(--r-xs)}
+.ndw :focus:not(:focus-visible){outline:none}
+/* alvo de toque mínimo e feedback tátil no mobile */
+.ndw button,.ndw a{-webkit-tap-highlight-color:rgba(255,255,255,.08)}
+.ndw [data-reveal]{will-change:opacity,transform}
+.ndw [data-reveal].is-in{will-change:auto}
+
+/* =========================================================
+   FUNDO GLOBAL: profundidade contínua + vinheta nas bordas
+   ========================================================= */
+/* sticky + margem negativa: fica preso na viewport sem sofrer o overflow-x:clip do .ndw
+   (position:fixed dentro de um ancestral com overflow acaba sendo recortado) */
+.ndw-bg{
+  position:sticky;top:0;z-index:0;height:100svh;margin-bottom:-100svh;
+  pointer-events:none;overflow:hidden;
+}
+.ndw-bg canvas{position:absolute;inset:0;width:100%;height:100%}
+.ndw-bg__deep{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(120% 68% at 50% -10%,rgba(34,44,68,.2),transparent 62%),
+    radial-gradient(100% 52% at 50% 110%,rgba(96,58,32,.13),transparent 62%),
+    radial-gradient(64% 46% at 6% 38%,rgba(30,36,54,.1),transparent 70%),
+    radial-gradient(64% 46% at 96% 68%,rgba(36,31,46,.1),transparent 70%);
+}
+/* vinheta + fade nas duas laterais: fecha as bordas e dá sensação de fundo infinito */
+.ndw-bg__vig{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(2,2,3,.96) 0%,rgba(2,2,3,.5) 9%,transparent 24%,transparent 76%,rgba(2,2,3,.5) 91%,rgba(2,2,3,.96) 100%),
+    radial-gradient(126% 94% at 50% 50%,transparent 28%,rgba(3,3,5,.55) 70%,rgba(1,1,2,.96) 100%);
+}
+/* grão sutil em toda a página */
+.ndw::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:50;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   BASE: layout, tipografia, títulos com fade
+   ========================================================= */
+.ndw-wrap{width:min(var(--wrap),calc(100% - 48px));margin-inline:auto;position:relative;z-index:2}
+.ndw-sec{position:relative;padding:clamp(74px,9vw,120px) 0}
+
+.ndw-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 13px 6px 9px;border-radius:999px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);
+  font-size:12.5px;font-weight:500;color:var(--text);line-height:1.2;
+}
+.ndw-tag svg{width:14px;height:14px;opacity:.8}
+
+/* line-height e padding folgados: a serif itálica tem descendentes longos
+   e sem isso o "g"/"ç" é cortado por quem tem overflow:hidden */
+.ndw-title{
+  font-family:var(--f-title);font-weight:500;
+  font-size:clamp(34px,4.8vw,58px);line-height:1.1;letter-spacing:-.035em;
+  color:var(--text);margin-top:20px;padding-bottom:.1em;text-wrap:balance;
+}
+.ndw-title--center{text-align:center;margin-inline:auto}
+
+/* destaque serifado itálico: contraste e refino nos títulos */
+.ndw-serif{
+  font-family:var(--f-serif);font-style:italic;font-weight:400;
+  letter-spacing:-.005em;padding-right:.1em;
+}
+.ndw-h1 .ndw-serif{font-weight:300}
+
+/* separadores internos de card: a linha some nas pontas em vez de bater na borda */
+.ndw-pillar__stat,.ndw-testi__who,.ndw-vs__foot{position:relative;border-top-color:transparent}
+.ndw-pillar__stat::before,.ndw-testi__who::before,.ndw-vs__foot::before{
+  content:"";position:absolute;left:0;right:0;top:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.13) 16%,rgba(255,255,255,.13) 84%,transparent);
+}
+
+/* o efeito principal: título que "acende" da esquerda pra direita.
+   background-clip:text só pinta dentro da caixa de fundo: sem o padding-bottom
+   a perna do "g"/"ç" cai fora dela e some. Em span inline o padding não mexe no layout. */
+.ndw-fade,.ndw-dim{
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  background-size:220% 100%;background-position:100% 0;
+  padding-bottom:.24em;
+  transition:background-position 2s var(--ease);
+}
+.ndw-fade{background-image:linear-gradient(100deg,#FFFFFF 0%,#E6E6E6 22%,#A9A49D 38%,rgba(143,139,133,.55) 48%,rgba(143,139,133,.14) 100%)}
+.ndw-dim{background-image:linear-gradient(100deg,#A29E98 0%,#8F8B85 30%,rgba(143,139,133,.72) 45%,rgba(143,139,133,.22) 60%,rgba(143,139,133,.08) 100%)}
+.is-in .ndw-fade,.is-in .ndw-dim,.ndw-fade.is-in,.ndw-dim.is-in{background-position:0 0}
+
+.ndw-lead{font-size:clamp(16px,1.35vw,18px);color:var(--muted);max-width:56ch;line-height:1.65}
+.ndw-lead strong{color:var(--text);font-weight:500}
+
+/* reveal (só esconde se o JS estiver ativo).
+   O estado inicial fica em :not(.is-in): assim, depois que o elemento aparece,
+   o reveal não declara mais transform e os :hover dos cards voltam a valer.
+   Com "transform:none" no .is-in, a especificidade maior anulava todo hover. */
+.ndw--js [data-reveal]{
+  transition:opacity 1s var(--ease),transform 1.2s var(--ease),filter 1s var(--ease);
+  transition-delay:var(--d,0s);
+}
+.ndw--js [data-reveal]:not(.is-in){
+  opacity:0;transform:translate3d(0,26px,0);filter:blur(8px);
+}
+.ndw--js [data-reveal="left"]:not(.is-in){transform:translate3d(-30px,0,0)}
+.ndw--js [data-reveal="scale"]:not(.is-in){transform:scale(.96) translate3d(0,20px,0)}
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+.ndw .ndw-btn{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:inline-flex;align-items:center;gap:14px;
+  padding:9px 9px 9px 26px;border-radius:999px;
+  background:var(--text);color:#0B0B0E;border:0;
+  font-family:var(--f-body);font-weight:600;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;line-height:1;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 14px 40px -14px rgba(230,230,230,.45);
+  transition:background .35s,box-shadow .5s var(--ease),transform .5s var(--ease);
+  will-change:transform;
+}
+.ndw .ndw-btn:hover{background:#FFFFFF;color:#0B0B0E;box-shadow:inset 0 1px 0 #fff,0 20px 60px -14px rgba(230,230,230,.6)}
+.ndw .ndw-btn::before{
+  content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:-1;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);
+  transform:skewX(-20deg);transition:left .9s var(--ease);
+}
+.ndw .ndw-btn:hover::before{left:130%}
+.ndw-btn__ic{
+  position:relative;overflow:hidden;width:38px;height:38px;border-radius:50%;
+  background:#0B0B0E;color:#fff;display:grid;place-items:center;
+}
+.ndw-btn__ic svg{width:16px;height:16px;transition:transform .55s var(--ease)}
+.ndw-btn__ic svg+svg{position:absolute;transform:translateX(-160%)}
+.ndw-btn:hover .ndw-btn__ic svg:first-child{transform:translateX(160%)}
+.ndw-btn:hover .ndw-btn__ic svg+svg{transform:translateX(0)}
+
+.ndw .ndw-btn--ghost{
+  background:rgba(255,255,255,.03);color:var(--text);
+  box-shadow:inset 0 0 0 1px var(--line-2);
+  padding:9px 9px 9px 24px;
+}
+.ndw .ndw-btn--ghost:hover{background:rgba(255,255,255,.07);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28)}
+.ndw .ndw-btn--ghost::before{background:linear-gradient(100deg,transparent,rgba(255,255,255,.12),transparent)}
+.ndw-btn--ghost .ndw-btn__ic{background:rgba(255,255,255,.08)}
+
+.ndw-btn-note{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--muted);margin-top:14px}
+.ndw-btn-note svg{width:15px;height:15px;color:var(--good)}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.ndw-nav{
+  position:fixed;top:16px;left:50%;z-index:999;
+  width:min(1120px,calc(100% - 24px));
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:8px 8px 8px 18px;border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(11,11,14,.5);
+  -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+  transform:translate(-50%,0);
+  transition:transform .7s var(--ease),background .4s,border-color .4s;
+}
+.ndw-nav.is-scrolled{background:rgba(11,11,14,.78);border-color:var(--line-2)}
+.ndw-nav.is-hidden{transform:translate(-50%,-150%)}
+.ndw-logo{display:flex;align-items:center;padding:2px 6px;transition:opacity .3s}
+.ndw-logo:hover{opacity:.78}
+.ndw-logo img{height:30px;width:auto}
+.ndw-nav__links{display:flex;gap:4px}
+.ndw-nav__links a{
+  position:relative;padding:8px 14px;border-radius:999px;font-size:13.5px;color:var(--muted);
+  transition:color .3s,background .3s;
+}
+.ndw-nav__links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+.ndw-nav__links a.is-active{color:var(--text);background:rgba(255,255,255,.06)}
+.ndw .ndw-nav .ndw-btn{padding:6px 6px 6px 18px;font-size:12px;gap:10px}
+.ndw-nav .ndw-btn__ic{width:30px;height:30px}
+.ndw-nav__progress{position:absolute;left:24px;right:24px;bottom:-1px;height:1px;overflow:hidden;pointer-events:none}
+.ndw-nav__progress i{display:block;height:100%;background:linear-gradient(90deg,transparent,var(--text));transform-origin:left;transform:scaleX(var(--p,0))}
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+.ndw-hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:140px 0 84px;overflow:hidden}
+.ndw-hero__bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.ndw-hero__bg canvas{position:absolute;inset:0;width:100%;height:100%}
+.ndw-hero__glow{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(55% 45% at 60% 94%,rgba(120,72,40,.26),transparent 70%),
+    radial-gradient(45% 40% at 18% 8%,rgba(46,56,80,.16),transparent 70%),
+    linear-gradient(180deg,rgba(4,4,6,.7) 0%,transparent 26%,transparent 62%,rgba(4,4,6,.5) 100%);
+}
+/* feixe: o canvas faz o movimento, isto é o núcleo sólido + halo */
+.ndw-beam{position:absolute;top:-8%;left:52%;width:3px;height:76%;transform:translateX(-50%)}
+.ndw-beam::before{
+  content:"";position:absolute;inset:0;border-radius:2px;
+  background:linear-gradient(to bottom,transparent,rgba(214,230,255,1) 38%,rgba(255,255,255,.72) 74%,transparent);
+  box-shadow:0 0 18px 3px rgba(190,214,255,.7),0 0 46px 10px rgba(130,166,255,.34),0 0 92px 26px rgba(90,126,220,.16);
+  animation:ndwBeam 5s ease-in-out infinite;
+}
+.ndw-beam::after{
+  content:"";position:absolute;top:4%;left:50%;width:520px;height:98%;transform:translateX(-50%);
+  background:
+    radial-gradient(38% 58% at 50% 46%,rgba(158,186,250,.2),transparent 72%),
+    radial-gradient(70% 34% at 50% 88%,rgba(150,180,245,.16),transparent 74%);
+  filter:blur(18px);
+}
+.ndw-horizon{
+  position:absolute;left:50%;top:80%;width:190vw;height:190vw;border-radius:50%;transform:translateX(-38%);
+  background:radial-gradient(60% 8% at 50% 0%,rgba(180,132,95,.14),transparent 70%),var(--bg);
+  box-shadow:inset 0 1px 0 rgba(255,215,180,.38),0 -30px 130px -18px rgba(180,120,75,.3);
+}
+.ndw-hero__grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(32px,5vw,72px);align-items:center}
+
+.ndw-hero__badge{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:7px 14px 7px 10px;border-radius:999px;
+  border:1px solid rgba(200,169,136,.22);background:rgba(200,169,136,.05);
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--warm);
+}
+.ndw-hero__badge i{width:6px;height:6px;border-radius:50%;background:var(--warm);animation:ndwPulseWarm 2.6s infinite}
+.ndw-h1{
+  font-family:var(--f-title);font-weight:500;
+  font-size:clamp(44px,5.6vw,80px);line-height:1;letter-spacing:-.045em;margin:24px 0 22px;
+}
+/* o padding abre a caixa de fundo pro descendente; a margem negativa devolve o espaço */
+.ndw-h1 > span{display:block;padding-bottom:.24em;margin-bottom:-.2em}
+.ndw-hero__sub{font-size:clamp(17px,1.5vw,19.5px);color:var(--muted);max-width:30em;line-height:1.55}
+.ndw-hero__sub em{font-style:normal;color:var(--text)}
+.ndw-hero__cta{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin-top:36px}
+/* microprova: fatos concretos logo abaixo do CTA, não promessas */
+.ndw-proofbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:0 clamp(18px,2.2vw,30px);
+  margin-top:clamp(32px,4vw,44px);padding-top:clamp(20px,2.4vw,26px);
+  position:relative;
+}
+.ndw-proofbar::before{
+  content:"";position:absolute;left:0;top:0;width:min(100%,420px);height:1px;
+  background:linear-gradient(90deg,rgba(255,255,255,.16),transparent);
+}
+.ndw-proofbar div{display:flex;align-items:center;gap:9px;padding:6px 0;line-height:1.25}
+.ndw-proofbar svg{width:15px;height:15px;color:var(--muted-2);flex-shrink:0}
+.ndw-proofbar b{font-family:var(--f-title);font-weight:500;font-size:15.5px;letter-spacing:-.015em;color:var(--text)}
+.ndw-proofbar span{font-size:13.5px;color:var(--muted)}
+
+/* retrato do hero */
+.ndw-stack{position:relative;height:clamp(440px,45vw,600px);perspective:1500px}
+.ndw-stack__inner{
+  position:absolute;inset:0;display:grid;place-items:center;transform-style:preserve-3d;
+  transform:rotateX(var(--rx,6deg)) rotateY(var(--ry,-10deg)) translateY(var(--sy,0px));
+}
+.ndw-layer{position:absolute;transform:translate3d(var(--px,0px),var(--py,0px),var(--z,0px));transition:transform .9s var(--ease)}
+
+.ndw-portrait{position:relative;width:min(80%,350px);display:grid;place-items:center}
+.ndw-portrait__glow{
+  position:absolute;inset:-16% -14%;z-index:-1;border-radius:50%;
+  background:radial-gradient(50% 50% at 50% 45%,rgba(150,175,235,.15),transparent 70%);filter:blur(22px);
+}
+.ndw-portrait__frame{
+  position:relative;width:100%;aspect-ratio:5/6;border-radius:var(--r-lg);overflow:hidden;
+  border:1px solid var(--line-2);background:linear-gradient(165deg,#191D25,#0B0C10);
+  box-shadow:var(--sh-lg),var(--edge-2);
+}
+.ndw-portrait__frame .ndw-photo img{object-position:center 12%}
+.ndw-portrait__frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:linear-gradient(180deg,transparent 48%,rgba(8,8,10,.72));
+}
+.ndw-portrait__cap{
+  position:absolute;z-index:2;left:12px;right:12px;bottom:12px;padding:12px 14px;border-radius:var(--r);
+  background:rgba(10,10,13,.6);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border:1px solid var(--line-2);line-height:1.3;
+}
+.ndw-portrait__cap strong{display:block;font-family:var(--f-title);font-weight:500;font-size:15px;letter-spacing:-.015em}
+.ndw-portrait__cap span{font-size:12.5px;color:var(--muted)}
+.ndw-portrait .ndw-layer{z-index:3}
+.ndw-layer--chip1{right:-14%;top:10%;--z:120px}
+.ndw-layer--chip2{left:-16%;bottom:24%;--z:140px}
+
+.ndw-chip{
+  display:flex;align-items:center;gap:9px;padding:9px 14px 9px 10px;border-radius:var(--r-sm);white-space:nowrap;
+  background:rgba(18,20,26,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border:1px solid var(--line-2);font-size:12.5px;color:var(--text);
+  box-shadow:var(--sh-md),var(--edge);
+  animation:ndwFloat 7s ease-in-out infinite;
+}
+.ndw-layer--chip2 .ndw-chip{animation-delay:-3.5s}
+.ndw-chip__ic{width:24px;height:24px;border-radius:var(--r-xs);display:grid;place-items:center;background:rgba(74,222,128,.12);color:var(--good)}
+.ndw-chip__ic svg{width:13px;height:13px}
+
+/* foto (placeholder se vazio) */
+.ndw-photo{position:absolute;inset:0;background:linear-gradient(160deg,#242832 0%,#131519 60%,#0B0C10 100%)}
+.ndw-photo img{width:100%;height:100%;object-fit:cover}
+.ndw-photo:empty::before{
+  content:"";position:absolute;left:50%;bottom:0;width:70%;aspect-ratio:1/1.05;transform:translateX(-50%);
+  background:
+    radial-gradient(circle at 50% 30%,#333845 0 24%,transparent 25%),
+    radial-gradient(ellipse 50% 42% at 50% 100%,#2E333E 0 99%,transparent 100%);
+  opacity:.9;
+}
+.ndw-photo:empty::after{
+  content:"SUA FOTO";position:absolute;top:10px;left:50%;transform:translateX(-50%);
+  white-space:nowrap;font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.28);
+}
+
+/* =========================================================
+   FAIXA DE THUMBS DOS PROJETOS (logo abaixo da hero)
+   ========================================================= */
+.ndw-strip{position:relative;z-index:2;padding:clamp(28px,4vw,44px) 0 clamp(6px,1.4vw,14px)}
+.ndw-strip__label{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  margin-bottom:clamp(18px,2.4vw,26px);
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);
+}
+.ndw-strip__label::before,.ndw-strip__label::after{content:"";width:clamp(20px,5vw,64px);height:1px;background:linear-gradient(90deg,transparent,var(--line-2))}
+.ndw-strip__label::after{background:linear-gradient(90deg,var(--line-2),transparent)}
+.ndw-marquee{
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+.ndw-marquee__track{display:flex;width:max-content;animation:ndwMarquee 46s linear infinite}
+.ndw-marquee:hover .ndw-marquee__track{animation-play-state:paused}
+.ndw-marquee__item{
+  position:relative;flex:none;width:clamp(200px,17vw,264px);margin-right:clamp(12px,1.4vw,18px);
+  border-radius:var(--r-sm);overflow:hidden;border:1px solid var(--line);background:#0B0C10;
+  transition:border-color .45s,transform .6s var(--ease);
+}
+.ndw-marquee__item:hover{border-color:var(--line-2);transform:translateY(-3px)}
+.ndw-marquee__item img{
+  width:100%;height:auto;aspect-ratio:2194/830;
+  object-fit:cover;object-position:top center;
+  filter:saturate(.82) brightness(.82);transition:filter .5s;
+}
+.ndw-marquee__item:hover img{filter:none}
+.ndw-marquee__item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:16px 12px 9px;
+  background:linear-gradient(180deg,transparent,rgba(6,6,9,.88));
+  font-size:12px;font-weight:500;letter-spacing:-.01em;color:rgba(230,230,230,.82);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* =========================================================
+   SLIDER DE CASES
+   ========================================================= */
+.ndw-slider{position:relative;margin-top:clamp(34px,4.4vw,48px)}
+.ndw-slider__viewport{overflow:hidden;border-radius:var(--r-lg)}
+.ndw-slider__track{display:flex;transition:transform .85s var(--ease)}
+.ndw-case{
+  flex:0 0 100%;display:grid;grid-template-columns:1.32fr 1fr;gap:clamp(18px,2.4vw,32px);
+  /* altura fixa: o print da página inteira tem milhares de px e esticaria o card */
+  grid-template-rows:clamp(380px,38vw,500px);
+  padding:clamp(14px,1.6vw,20px);border-radius:var(--r-lg);
+  border:1px solid var(--line);background:linear-gradient(180deg,#14171D,#0B0C10);
+  box-shadow:var(--sh-md),var(--edge);
+}
+.ndw-case__frame{
+  position:relative;display:flex;flex-direction:column;overflow:hidden;min-width:0;
+  border-radius:var(--r);border:1px solid var(--line-2);background:#0B0C10;
+}
+.ndw-case__win{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;flex:none;border-bottom:1px solid var(--line);background:rgba(255,255,255,.025)}
+.ndw-case__win i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.14)}
+.ndw-case__win span{margin-left:10px;height:12px;flex:1;max-width:58%;border-radius:var(--r-xs);background:rgba(255,255,255,.05)}
+.ndw-case__screen{position:relative;flex:1 1 auto;overflow:hidden;min-height:0;background:#0B0C10}
+.ndw-case__screen img{
+  width:100%;height:auto;display:block;object-fit:cover;object-position:top center;
+  transform:translateY(0);transition:transform 18s linear;
+}
+.ndw-case.is-playing .ndw-case__screen img{transform:translateY(calc(var(--sh,420px) - 100%))}
+.ndw-case__screen::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 78%,rgba(9,10,14,.7));
+}
+/* o scroll só começa quando a pessoa pede */
+.ndw .ndw-case__play{
+  position:absolute;inset:0;z-index:3;display:grid;place-items:center;
+  background:linear-gradient(180deg,rgba(6,7,10,.18),rgba(6,7,10,.5));
+  -webkit-backdrop-filter:blur(1px);backdrop-filter:blur(1px);
+  transition:opacity .5s,visibility .5s;
+}
+.ndw-case.is-playing .ndw-case__play{opacity:0;visibility:hidden}
+.ndw-case__play span{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:11px 20px 11px 14px;border-radius:999px;
+  background:rgba(230,230,230,.95);color:#0B0B0E;
+  font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;line-height:1;
+  box-shadow:var(--sh-md);
+  transition:transform var(--t) var(--ease),background var(--t-fast);
+}
+.ndw-case__play svg{width:15px;height:15px}
+.ndw-case__play:hover span{transform:translateY(-2px);background:#fff}
+.ndw-case__info{display:flex;flex-direction:column;padding:clamp(8px,1.4vw,18px) clamp(6px,1vw,14px) clamp(10px,1.4vw,16px) 0}
+.ndw-case__kind{
+  display:inline-flex;align-self:flex-start;align-items:center;gap:8px;
+  padding:6px 13px 6px 9px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);
+}
+.ndw-case__kind i{width:5px;height:5px;border-radius:50%;background:var(--warm)}
+.ndw-case__info h3{
+  margin-top:16px;font-family:var(--f-title);font-weight:500;
+  font-size:clamp(24px,2.4vw,32px);line-height:1.12;letter-spacing:-.035em;padding-bottom:.06em;
+}
+.ndw-case__seg{margin-top:9px;font-size:14.5px;color:var(--muted);line-height:1.5;max-width:30ch}
+.ndw-case__result{
+  display:flex;align-items:center;gap:12px;margin-top:auto;padding:15px 16px;border-radius:var(--r);
+  border:1px solid rgba(74,222,128,.22);background:rgba(74,222,128,.05);
+}
+.ndw-case__result svg{width:18px;height:18px;color:var(--good);flex-shrink:0}
+.ndw-case__result b{display:block;font-family:var(--f-title);font-weight:500;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.02em;line-height:1.15;color:#fff}
+.ndw-case__result small{display:block;margin-top:3px;font-size:12.5px;color:var(--muted)}
+.ndw-case__hint{
+  display:flex;align-items:center;gap:8px;margin-top:14px;font-size:12.5px;color:var(--muted-2);
+}
+.ndw-case__hint svg{width:13px;height:13px}
+
+/* os 3 últimos só entram se a pessoa pedir: 4 fortes bastam pra decidir */
+.ndw-case[hidden]{display:none}
+.ndw-slider__more{display:flex;justify-content:center;margin-top:clamp(20px,2.4vw,28px)}
+.ndw-slider__more[hidden]{display:none}
+.ndw-slider__foot{display:flex;align-items:center;gap:clamp(14px,2vw,26px);margin-top:20px}
+.ndw-slider__bar{position:relative;flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,.09);overflow:hidden}
+.ndw-slider__bar i{
+  position:absolute;inset:0;transform-origin:left;transform:scaleX(var(--sp,.14));
+  background:linear-gradient(90deg,rgba(230,230,230,.5),var(--text));
+  transition:transform .7s var(--ease);
+}
+.ndw-slider__count{font-family:var(--f-title);font-size:13.5px;letter-spacing:.06em;color:var(--muted);font-variant-numeric:tabular-nums}
+.ndw-slider__count b{color:var(--text);font-weight:500}
+.ndw-slider__arrows{display:flex;gap:8px}
+.ndw .ndw-slider__arrows button{
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line-2);color:var(--text);background:rgba(255,255,255,.03);
+  transition:background .35s,border-color .35s,transform .5s var(--ease),opacity .35s;
+}
+.ndw .ndw-slider__arrows button:hover{background:var(--text);color:#0B0B0E;border-color:var(--text)}
+.ndw .ndw-slider__arrows button:disabled{opacity:.3;cursor:default}
+.ndw .ndw-slider__arrows button:disabled:hover{background:rgba(255,255,255,.03);color:var(--text);border-color:var(--line-2)}
+.ndw-slider__arrows svg{width:17px;height:17px}
+
+/* =========================================================
+   2. PROBLEMA
+   ========================================================= */
+.ndw-problem::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(55% 45% at 50% 35%,#000,transparent);mask-image:radial-gradient(55% 45% at 50% 35%,#000,transparent);
+}
+.ndw-problem__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(40px,7vw,110px);align-items:end}
+.ndw-problem__text p{margin-top:22px}
+.ndw-problem__text p:first-of-type{margin-top:28px}
+
+.ndw-issues{list-style:none;display:flex;flex-direction:column;gap:10px}
+.ndw-issue{
+  position:relative;isolation:isolate;overflow:hidden;
+  display:flex;align-items:flex-start;gap:15px;
+  padding:18px 20px 18px 17px;border-radius:var(--r);cursor:default;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.008));
+  transition:border-color .5s,background .5s,transform .6s var(--ease);
+}
+.ndw-issue::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;transform-origin:top;transform:scaleY(0);
+  background:linear-gradient(180deg,rgba(248,113,113,.9),rgba(248,113,113,.15));
+  transition:transform 1s var(--ease) calc(var(--d,0s) + .3s);
+}
+.ndw-issue.is-in::before{transform:scaleY(1)}
+.ndw-issue:hover{border-color:rgba(248,113,113,.24);background:rgba(248,113,113,.035);transform:translateX(5px)}
+.ndw-issue__ic{
+  width:30px;height:30px;border-radius:var(--r-xs);flex-shrink:0;display:grid;place-items:center;
+  background:rgba(248,113,113,.09);color:rgba(248,113,113,.55);border:1px solid rgba(248,113,113,.16);
+  transition:color .7s calc(var(--d,0s) + .45s),background .7s,transform .6s var(--ease);
+}
+.ndw-issue__ic svg{width:15px;height:15px}
+.ndw-issue.is-in .ndw-issue__ic{color:var(--bad)}
+.ndw-issue:hover .ndw-issue__ic{background:rgba(248,113,113,.16);transform:rotate(-6deg) scale(1.05)}
+.ndw-issue__txt{display:block;font-size:clamp(15px,1.3vw,16.5px);font-weight:500;color:var(--text);line-height:1.35;letter-spacing:-.012em}
+.ndw-issue__sub{display:block;margin-top:5px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.ndw-issue__n{
+  margin-left:auto;align-self:center;flex-shrink:0;
+  font-family:var(--f-title);font-size:12px;font-weight:500;letter-spacing:.08em;
+  color:rgba(255,255,255,.14);transition:color .4s;
+}
+.ndw-issue:hover .ndw-issue__n{color:rgba(248,113,113,.45)}
+
+/* fluxo: tráfego → ... */
+.ndw-flow{
+  position:relative;margin-top:clamp(64px,8vw,96px);overflow:hidden;
+  border:1px solid var(--line);border-radius:var(--r-xl);
+  background:linear-gradient(180deg,rgba(26,29,36,.55),rgba(14,15,19,.55));
+  padding:26px clamp(20px,4vw,52px) 44px;
+}
+.ndw-flow::before{
+  content:"";position:absolute;inset:auto 0 0 0;height:60%;pointer-events:none;opacity:0;transition:opacity 1s;
+  background:radial-gradient(50% 80% at 85% 100%,rgba(74,222,128,.10),transparent 70%);
+}
+.ndw-flow[data-state="good"]::before{opacity:1}
+.ndw-flow__head{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:54px}
+.ndw-flow__cap{position:relative;height:1.5em;overflow:hidden;min-width:260px;font-size:14px;color:var(--muted)}
+.ndw-flow__cap span{position:absolute;inset:0;transition:transform .7s var(--ease),opacity .5s}
+.ndw-flow__cap .b{transform:translateY(100%);opacity:0}
+.ndw-flow[data-state="good"] .ndw-flow__cap .a{transform:translateY(-100%);opacity:0}
+.ndw-flow[data-state="good"] .ndw-flow__cap .b{transform:none;opacity:1;color:var(--text)}
+
+.ndw .ndw-switch{
+  position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:999px;
+  background:rgba(255,255,255,.03);box-shadow:inset 0 0 0 1px var(--line-2);
+  font-size:12.5px;font-weight:500;
+}
+.ndw-switch span{position:relative;z-index:1;padding:7px 14px;text-align:center;color:var(--muted);transition:color .4s;white-space:nowrap}
+.ndw-switch::before{
+  content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;
+  background:rgba(248,113,113,.12);box-shadow:inset 0 0 0 1px rgba(248,113,113,.3);
+  transition:transform .6s var(--ease),background .5s,box-shadow .5s;
+}
+.ndw-flow[data-state="bad"] .ndw-switch span:first-child{color:#F7B4B4}
+.ndw-flow[data-state="good"] .ndw-switch::before{transform:translateX(100%);background:rgba(74,222,128,.12);box-shadow:inset 0 0 0 1px rgba(74,222,128,.32)}
+.ndw-flow[data-state="good"] .ndw-switch span:last-child{color:#A7F0C3}
+
+.ndw-flow__body{position:relative}
+.ndw-flow__nodes{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr)}
+.ndw-node{display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px}
+.ndw-node__ic{
+  position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  background:#111318;border:1px solid var(--line-2);color:var(--text);
+  transition:border-color .7s,box-shadow .7s,color .7s,transform .6s var(--ease);
+}
+.ndw-node__ic svg{position:absolute;width:21px;height:21px;transition:opacity .5s,transform .7s var(--ease)}
+.ndw-node__ic .b{opacity:0;transform:scale(.6) rotate(-20deg)}
+.ndw-flow[data-state="good"] .ndw-node__ic .a{opacity:0;transform:scale(.6) rotate(20deg)}
+.ndw-flow[data-state="good"] .ndw-node__ic .b{opacity:1;transform:none}
+.ndw-node:hover .ndw-node__ic{transform:translateY(-4px)}
+.ndw-flow[data-state="bad"] .ndw-node--end .ndw-node__ic{border-color:rgba(248,113,113,.45);color:var(--bad);box-shadow:0 0 30px -6px rgba(248,113,113,.35)}
+.ndw-flow[data-state="good"] .ndw-node:not(:first-child) .ndw-node__ic{border-color:rgba(74,222,128,.35)}
+.ndw-flow[data-state="good"] .ndw-node--end .ndw-node__ic{border-color:rgba(74,222,128,.6);color:var(--good);box-shadow:0 0 36px -4px rgba(74,222,128,.45)}
+
+.ndw-node__lb{position:relative;width:100%;height:1.4em;overflow:hidden;font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.ndw-node__lb span{position:absolute;inset:0;transition:transform .75s var(--ease),opacity .5s,filter .6s}
+.ndw-node__lb .b{transform:translateY(110%);opacity:0;filter:blur(4px)}
+.ndw-flow[data-state="good"] .ndw-node__lb .a{transform:translateY(-110%);opacity:0;filter:blur(4px)}
+.ndw-flow[data-state="good"] .ndw-node__lb .b{transform:none;opacity:1;filter:none}
+.ndw-node:nth-child(2) .ndw-node__lb span{transition-delay:.05s}
+.ndw-node:nth-child(3) .ndw-node__lb span{transition-delay:.12s}
+.ndw-node:nth-child(4) .ndw-node__lb span{transition-delay:.19s}
+.ndw-flow[data-state="bad"] .ndw-node--end .ndw-node__lb{color:#F7B4B4}
+
+.ndw-flow__track{position:absolute;z-index:1;top:28px;left:12.5%;right:12.5%;height:1px;background:rgba(255,255,255,.08)}
+.ndw-flow__fill{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(230,230,230,.15),rgba(230,230,230,.55) 66.6%,transparent 66.6%);
+  transition:background .8s;
+}
+.ndw-flow[data-state="good"] .ndw-flow__fill{background:linear-gradient(90deg,rgba(230,230,230,.2),rgba(74,222,128,.8))}
+.ndw-flow__end{
+  position:absolute;top:0;left:66.66%;right:0;height:1px;transition:opacity .6s;
+  background:repeating-linear-gradient(90deg,rgba(248,113,113,.65) 0 5px,transparent 5px 11px);
+}
+.ndw-flow[data-state="good"] .ndw-flow__end{opacity:0}
+.ndw-flow__pulse{
+  position:absolute;top:-3px;left:0;width:7px;height:7px;border-radius:50%;
+  background:#fff;box-shadow:0 0 14px 3px rgba(255,255,255,.55);
+  animation:ndwRunBad 3.4s var(--ease-io) infinite;
+}
+.ndw-flow[data-state="good"] .ndw-flow__pulse{background:var(--good);box-shadow:0 0 16px 4px rgba(74,222,128,.6);animation-name:ndwRunGood}
+.ndw-problem__close{margin:clamp(56px,7vw,84px) auto 0;max-width:40ch;text-align:center;font-family:var(--f-title);font-size:clamp(20px,2.1vw,26px);line-height:1.35;letter-spacing:-.015em;color:var(--muted)}
+.ndw-problem__close strong{color:var(--text);font-weight:500}
+
+/* =========================================================
+   3. O QUE EU FAÇO
+   ========================================================= */
+.ndw-what__head{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,90px);align-items:end}
+.ndw-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:clamp(56px,7vw,84px)}
+
+/* card com borda metalizada + light edge fade */
+.ndw-pillar{
+  position:relative;isolation:isolate;padding:1px;border-radius:var(--r-lg);
+  background:linear-gradient(150deg,rgba(255,255,255,.34) 0%,rgba(255,255,255,.07) 20%,rgba(255,255,255,.02) 46%,rgba(255,255,255,.06) 74%,rgba(255,255,255,.26) 100%);
+  transition:transform .7s var(--ease),filter .5s;
+}
+.ndw-pillar::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;
+  background:linear-gradient(115deg,transparent calc(var(--ndw-sweep) + 0%),rgba(255,255,255,.75) calc(var(--ndw-sweep) + 12%),transparent calc(var(--ndw-sweep) + 24%));
+  transition:opacity .4s;
+}
+.ndw-pillar:hover{transform:translateY(-3px)}
+.ndw-pillar:hover::after{opacity:1;animation:ndwSweep 1.1s var(--ease)}
+.ndw-pillar__in{
+  position:relative;isolation:isolate;overflow:hidden;height:100%;
+  padding:18px 18px 28px;border-radius:calc(var(--r-lg) - 1px);
+  background:linear-gradient(180deg,#14171D 0%,#0E1015 60%,#0B0C10 100%);
+  box-shadow:var(--sh-md);
+}
+.ndw [data-spot]::before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .5s;pointer-events:none;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.07),transparent 45%);
+}
+.ndw [data-spot]:hover::before{opacity:1}
+.ndw-pillar__body{padding:22px 10px 0}
+.ndw-pillar h3{font-family:var(--f-title);font-weight:500;font-size:clamp(22px,2vw,26px);letter-spacing:-.025em;line-height:1.15}
+.ndw-pillar p{margin-top:11px;color:var(--muted);font-size:15.5px;line-height:1.6}
+.ndw-pillar__stat{
+  display:flex;align-items:baseline;gap:11px;margin-top:22px;padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.ndw-pillar__stat b{
+  font-family:var(--f-title);font-weight:500;font-size:clamp(26px,2.4vw,32px);letter-spacing:-.04em;line-height:1;
+  background:linear-gradient(180deg,#fff 20%,rgba(143,139,133,.75) 130%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ndw-pillar__stat span{font-size:13px;color:var(--muted);line-height:1.35}
+
+/* ---- visuais animadas dos pilares (loop contínuo) ---- */
+.ndw-viz{
+  position:relative;overflow:hidden;height:clamp(150px,14vw,172px);border-radius:var(--r);
+  border:1px solid var(--line);background:radial-gradient(90% 70% at 50% 0%,rgba(255,255,255,.045),transparent 70%),#0A0B0F;
+}
+.ndw-viz::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 76%,rgba(10,11,15,.55))}
+.ndw-viz__in{position:absolute;inset:0;padding:16px}
+
+/* 1. clareza / autoridade */
+.ndw-viz--clear .ndw-viz__brand{display:flex;align-items:center;gap:9px}
+.ndw-viz--clear .ndw-viz__av{
+  width:28px;height:28px;border-radius:var(--r-xs);flex-shrink:0;
+  background:linear-gradient(145deg,#3A4150,#171A21);border:1px solid var(--line-2);
+}
+.ndw-viz--clear .ndw-viz__nm{flex:1}
+.ndw-viz--clear .ndw-viz__nm i{display:block;height:6px;width:64px;border-radius:3px;background:rgba(255,255,255,.55)}
+.ndw-viz--clear .ndw-viz__nm u{display:block;margin-top:5px;height:5px;width:42px;border-radius:3px;background:rgba(255,255,255,.16)}
+.ndw-viz__verified{
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+  background:rgba(74,222,128,.14);color:var(--good);border:1px solid rgba(74,222,128,.3);
+  animation:ndwVerify 5.5s var(--ease) infinite;
+}
+.ndw-viz__verified svg{width:11px;height:11px}
+.ndw-viz--clear .ndw-viz__lines{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.ndw-viz--clear .ndw-viz__lines i{
+  display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.12);
+  transform-origin:left;animation:ndwAlign 5.5s var(--ease) infinite;
+}
+.ndw-viz--clear .ndw-viz__lines i:nth-child(1){width:92%;animation-delay:.1s}
+.ndw-viz--clear .ndw-viz__lines i:nth-child(2){width:78%;animation-delay:.25s}
+.ndw-viz--clear .ndw-viz__lines i:nth-child(3){width:58%;animation-delay:.4s}
+.ndw-viz__stars{display:flex;gap:3px;margin-top:16px;color:var(--warm)}
+.ndw-viz__stars svg{width:12px;height:12px;opacity:.2;animation:ndwStarOn 5.5s var(--ease) infinite}
+.ndw-viz__stars svg:nth-child(2){animation-delay:.12s}
+.ndw-viz__stars svg:nth-child(3){animation-delay:.24s}
+.ndw-viz__stars svg:nth-child(4){animation-delay:.36s}
+.ndw-viz__stars svg:nth-child(5){animation-delay:.48s}
+
+/* 2. ação / clique no CTA */
+.ndw-viz--act .ndw-viz__page{display:flex;flex-direction:column;align-items:center;gap:9px;padding-top:6px}
+.ndw-viz--act .ndw-viz__page i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.14)}
+.ndw-viz--act .ndw-viz__page i:nth-child(1){width:70%;background:rgba(255,255,255,.4)}
+.ndw-viz--act .ndw-viz__page i:nth-child(2){width:52%}
+.ndw-viz__cta{
+  position:relative;margin-top:8px;padding:9px 20px;border-radius:999px;
+  background:var(--text);color:#0B0B0E;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  animation:ndwCtaPress 4.5s var(--ease) infinite;
+}
+.ndw-viz__cta::after{
+  content:"";position:absolute;left:50%;top:50%;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.5);opacity:0;animation:ndwCtaRipple 4.5s var(--ease) infinite;
+}
+.ndw-viz__cursor{
+  position:absolute;left:50%;top:60%;width:17px;height:17px;color:#fff;
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.8));animation:ndwCursor 4.5s var(--ease) infinite;
+}
+.ndw-viz__toast{
+  position:absolute;left:50%;bottom:14px;transform:translateX(-50%) translateY(14px);opacity:0;
+  display:flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;white-space:nowrap;
+  background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.3);color:#A7F0C3;font-size:11px;font-weight:500;
+  animation:ndwToast 4.5s var(--ease) infinite;z-index:3;
+}
+.ndw-viz__toast svg{width:11px;height:11px}
+
+/* 3. vendas / dashboard de conversão */
+.ndw-viz--sales .ndw-viz__head{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.ndw-viz--sales .ndw-viz__kpi{font-family:var(--f-title);font-weight:500;font-size:22px;letter-spacing:-.03em;color:#fff;line-height:1}
+.ndw-viz--sales .ndw-viz__kpi small{display:block;margin-top:4px;font-family:var(--f-body);font-size:10.5px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-2)}
+.ndw-viz__up{
+  display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:999px;
+  background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.28);color:var(--good);font-size:11px;font-weight:600;
+  animation:ndwUpPulse 4.5s var(--ease) infinite;
+}
+.ndw-viz__up svg{width:10px;height:10px}
+.ndw-viz__bars{display:flex;align-items:flex-end;gap:7px;height:62px;margin-top:14px}
+.ndw-viz__bars i{
+  flex:1;height:100%;border-radius:4px 4px 2px 2px;transform-origin:bottom;transform:scaleY(.12);
+  background:linear-gradient(180deg,rgba(255,255,255,.4),rgba(255,255,255,.08));
+  animation:ndwBarGrow 4.5s var(--ease) infinite;
+}
+.ndw-viz__bars i:nth-child(1){--bh:.28;animation-delay:0s}
+.ndw-viz__bars i:nth-child(2){--bh:.4;animation-delay:.1s}
+.ndw-viz__bars i:nth-child(3){--bh:.34;animation-delay:.2s}
+.ndw-viz__bars i:nth-child(4){--bh:.56;animation-delay:.3s}
+.ndw-viz__bars i:nth-child(5){--bh:.72;animation-delay:.4s}
+.ndw-viz__bars i:nth-child(6){--bh:.88;animation-delay:.5s;background:linear-gradient(180deg,#4ADE80,rgba(74,222,128,.18))}
+.ndw-viz__bars i:nth-child(7){--bh:1;animation-delay:.6s;background:linear-gradient(180deg,#4ADE80,rgba(74,222,128,.22))}
+
+.ndw-statement{
+  margin:clamp(110px,14vw,190px) auto 0;max-width:17ch;text-align:center;
+  font-family:var(--f-title);font-weight:500;font-size:clamp(38px,6.2vw,84px);line-height:1.04;letter-spacing:-.045em;
+}
+.ndw-statement .w{display:inline-block;opacity:.12;transition:opacity .5s,color .5s,filter .5s;filter:blur(1.5px)}
+.ndw-statement .w.on{opacity:1;filter:none}
+.ndw-statement .p1.on{color:var(--muted)}
+.ndw-statement .p2.on{color:#fff}
+.ndw-statement .p2.last{position:relative}
+.ndw-statement .p2.last::after{
+  content:"";position:absolute;left:0;right:.08em;bottom:.02em;height:.06em;border-radius:1em;
+  background:linear-gradient(90deg,#fff,rgba(74,222,128,.9));transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease) .15s;
+}
+.ndw-statement .p2.last.on::after{transform:scaleX(1)}
+
+/* =========================================================
+   4. PROVA
+   ========================================================= */
+.ndw-proof__head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.ndw-works__tip{
+  display:inline-flex;align-items:center;gap:9px;margin-top:clamp(20px,2.6vw,28px);
+  padding:9px 16px 9px 12px;border-radius:999px;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);
+  font-size:13px;color:var(--muted);line-height:1.3;
+}
+.ndw-works__tip svg{width:15px;height:15px;color:var(--text);flex-shrink:0}
+.ndw-works__tip b{color:var(--text);font-weight:500}
+.ndw-works__tip .t-touch{display:none}
+
+/* =========================================================
+   DEPOIMENTO EM DESTAQUE
+   ========================================================= */
+.ndw-testi{position:relative;text-align:center}
+.ndw-testi::before{
+  content:"";position:absolute;left:50%;top:-4%;width:min(1000px,110%);height:70%;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 40%,rgba(200,169,136,.09),transparent 70%);
+}
+.ndw-testi__title{
+  font-family:var(--f-title);font-weight:500;
+  font-size:clamp(28px,4vw,52px);letter-spacing:-.035em;line-height:1.12;padding-bottom:.08em;
+  max-width:24ch;margin-inline:auto;text-wrap:balance;
+}
+.ndw-testi__card{
+  position:relative;margin:clamp(30px,3.6vw,44px) auto 0;width:min(100%,1000px);
+  border-radius:var(--r-xl);padding:1px;isolation:isolate;
+  background:conic-gradient(from var(--ndw-ang),rgba(255,255,255,.06) 0deg,rgba(255,255,255,.55) 40deg,rgba(200,169,136,.5) 70deg,rgba(255,255,255,.06) 120deg,rgba(255,255,255,.06) 360deg);
+  animation:ndwSpin 8s linear infinite;
+}
+/* vídeo vertical de um lado, depoimento do outro */
+.ndw-testi__in{
+  display:grid;grid-template-columns:auto 1fr;align-items:center;
+  gap:clamp(24px,3.4vw,48px);
+  padding:clamp(14px,1.6vw,20px) clamp(24px,3.4vw,48px) clamp(14px,1.6vw,20px) clamp(14px,1.6vw,20px);
+  border-radius:calc(var(--r-xl) - 1px);
+  background:radial-gradient(70% 80% at 0% 0%,rgba(200,169,136,.07),transparent 70%),#0E1014;
+}
+.ndw .ndw-video{
+  position:relative;display:block;
+  aspect-ratio:var(--vr,16/9);width:100%;
+  border-radius:var(--r-md);overflow:hidden;cursor:pointer;
+  background:radial-gradient(70% 90% at 30% 20%,#252932,#0D0F13 70%);border:1px solid var(--line);
+}
+/* vídeo vertical: manda a altura e deixa a largura seguir a proporção */
+.ndw .ndw-video.is-portrait{width:auto;height:clamp(360px,42vw,470px)}
+.ndw-video iframe,.ndw-video video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.ndw-video__poster{position:absolute;inset:0;overflow:hidden}
+.ndw-video__poster img,.ndw-video__poster video{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ndw-video:hover .ndw-video__poster img,.ndw-video:hover .ndw-video__poster video{transform:scale(1.04)}
+.ndw-video__poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,11,.25),rgba(8,8,11,.55))}
+.ndw-video__play{
+  position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;
+  display:grid;place-items:center;background:var(--text);color:#0B0B0E;
+  transition:transform .6s var(--ease),background .3s;
+}
+.ndw-video__play svg{width:24px;height:24px;margin-left:4px}
+.ndw-video__play::before,.ndw-video__play::after{
+  content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(230,230,230,.45);animation:ndwRing 2.6s var(--ease) infinite;
+}
+.ndw-video__play::after{animation-delay:1.3s}
+.ndw-video:hover .ndw-video__play{transform:scale(1.08);background:#fff}
+.ndw-video__lbl{position:absolute;left:18px;bottom:16px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text);padding:7px 12px;border-radius:999px;background:rgba(11,11,14,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--line)}
+.ndw-video__lbl i{width:6px;height:6px;border-radius:50%;background:var(--bad)}
+.ndw-video.is-playing .ndw-video__poster,.ndw-video.is-playing .ndw-video__play,.ndw-video.is-playing .ndw-video__lbl{display:none}
+.ndw-testi__quote{position:relative;text-align:left;min-width:0}
+.ndw-testi__mark{font-family:var(--f-serif);font-style:italic;font-size:80px;line-height:.62;height:30px;color:rgba(230,230,230,.2)}
+.ndw-testi__quote blockquote{
+  font-family:var(--f-title);font-weight:500;
+  font-size:clamp(20px,2.1vw,29px);line-height:1.26;letter-spacing:-.025em;
+  padding-bottom:.06em;text-wrap:pretty;
+}
+.ndw-testi__quote blockquote em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:#fff;padding-right:.08em}
+.ndw-testi__result{
+  display:flex;align-items:center;gap:12px;margin-top:22px;padding:13px 16px;border-radius:var(--r);
+  border:1px solid rgba(74,222,128,.22);background:rgba(74,222,128,.055);
+}
+.ndw-testi__result svg{width:18px;height:18px;color:var(--good);flex-shrink:0}
+.ndw-testi__result span{font-size:13.5px;color:var(--text);line-height:1.45}
+.ndw-testi__result b{font-weight:600;color:#fff}
+.ndw-testi__who{
+  display:flex;align-items:center;gap:14px;
+  margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
+}
+.ndw-testi__av{position:relative;width:52px;height:52px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2);flex-shrink:0}
+.ndw-testi__av .ndw-photo:empty::before{width:90%}
+.ndw-testi__av .ndw-photo:empty::after{content:none}
+.ndw-testi__who > div{min-width:0}
+.ndw-testi__who strong{display:block;font-family:var(--f-title);font-weight:500;font-size:16.5px;letter-spacing:-.015em;line-height:1.25}
+.ndw-testi__who span{display:block;font-size:13.5px;color:var(--muted);line-height:1.35}
+.ndw-testi__who a{color:var(--muted);transition:color .3s}
+.ndw-testi__who a:hover{color:var(--text)}
+
+/* =========================================================
+   5. COMO FUNCIONA
+   ========================================================= */
+.ndw-steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:clamp(64px,8vw,96px)}
+.ndw-steps__line{position:absolute;top:0;left:0;right:0;height:1px;background:rgba(255,255,255,.1);overflow:hidden}
+.ndw-steps__fill{
+  position:absolute;inset:0;background:linear-gradient(90deg,rgba(230,230,230,.35),var(--text) 70%,var(--good));
+  transform-origin:left;transform:scaleX(var(--p,0));
+  box-shadow:0 0 12px rgba(230,230,230,.35);
+}
+.ndw-step{
+  position:relative;padding:38px 20px 26px;border-radius:var(--r-lg);border:1px solid transparent;
+  transition:background .8s var(--ease),border-color .8s,transform .9s var(--ease);
+}
+.ndw-step.is-on{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  border-color:var(--line);transform:translateY(-3px);
+}
+.ndw-step::before{
+  content:"";position:absolute;top:-5px;left:20px;width:11px;height:11px;border-radius:50%;z-index:2;
+  background:var(--bg);border:1px solid rgba(255,255,255,.3);transition:background .5s,border-color .5s,box-shadow .5s;
+}
+.ndw-step.is-on::before{background:var(--text);border-color:var(--text);box-shadow:0 0 0 5px rgba(230,230,230,.08),0 0 18px rgba(230,230,230,.5)}
+.ndw-step:last-child.is-on::before{background:var(--good);border-color:var(--good);box-shadow:0 0 0 5px rgba(74,222,128,.1),0 0 18px rgba(74,222,128,.6)}
+.ndw-step__n{
+  display:block;font-family:var(--f-title);font-weight:500;font-size:clamp(54px,6.4vw,92px);line-height:.9;letter-spacing:-.06em;
+  background:linear-gradient(180deg,#E6E6E6 0%,rgba(143,139,133,.35) 65%,rgba(143,139,133,0) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:.22;transform:translateY(14px) scale(.96);transform-origin:left bottom;
+  transition:opacity .9s var(--ease),transform 1.1s var(--ease);
+}
+.ndw-step.is-on .ndw-step__n{opacity:1;transform:none}
+.ndw-step h3{
+  margin-top:16px;font-family:var(--f-title);font-weight:500;font-size:clamp(18px,1.55vw,21px);
+  letter-spacing:-.02em;line-height:1.25;color:var(--muted);
+  opacity:.5;transform:translateY(10px);
+  transition:opacity .8s var(--ease) .1s,transform .9s var(--ease) .1s,color .8s .1s;
+}
+.ndw-step.is-on h3{opacity:1;transform:none;color:var(--text)}
+.ndw-step p{
+  margin-top:10px;color:var(--muted);font-size:14.5px;line-height:1.6;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .8s var(--ease) .2s,transform .9s var(--ease) .2s;
+}
+.ndw-step.is-on p{opacity:1;transform:none}
+
+/* alívio: barra que reage ao scroll */
+.ndw-relief{
+  position:relative;overflow:hidden;isolation:isolate;margin-top:clamp(72px,9vw,110px);
+  display:flex;align-items:center;gap:clamp(20px,3vw,36px);flex-wrap:wrap;
+  padding:clamp(28px,4vw,48px);border-radius:var(--r-xl);
+  background:radial-gradient(60% 120% at 0% 50%,rgba(74,222,128,.08),transparent 60%),linear-gradient(180deg,#14171D,#0D0F13);
+  border:1px solid var(--line-2);
+}
+.ndw-relief::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;transform-origin:left;transform:scaleX(var(--rp,0));
+  background:linear-gradient(90deg,rgba(230,230,230,.3),var(--good));
+}
+.ndw-relief__av{position:relative;width:76px;height:76px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2);flex-shrink:0}
+.ndw-relief__av img{width:100%;height:100%;object-fit:cover;object-position:center 10%}
+.ndw-relief__av .ndw-photo:empty::after{content:none}
+.ndw-relief__av::after{content:"";position:absolute;right:3px;bottom:3px;width:14px;height:14px;border-radius:50%;background:var(--good);border:3px solid #13151A;z-index:2}
+.ndw-relief__main{flex:1;min-width:min(100%,280px)}
+.ndw-relief p{font-family:var(--f-title);font-weight:500;font-size:clamp(23px,2.8vw,38px);line-height:1.12;letter-spacing:-.03em;color:var(--muted)}
+.ndw-relief p strong{display:block;color:#fff;font-weight:500}
+.ndw-relief p em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:#fff}
+.ndw-relief__jobs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.ndw-relief__jobs span{
+  display:inline-flex;align-items:center;gap:7px;padding:7px 13px 7px 9px;border-radius:999px;
+  border:1px solid var(--line);background:rgba(255,255,255,.02);
+  font-size:12.5px;color:var(--muted-2);line-height:1;
+  transition:color .5s var(--ease),border-color .5s,background .5s;
+}
+.ndw-relief__jobs span::before{
+  content:"";width:15px;height:15px;border-radius:50%;flex-shrink:0;
+  border:1px solid rgba(255,255,255,.18);
+  background:no-repeat center/9px 9px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B0B0E' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  background-color:transparent;transition:background-color .5s,border-color .5s,transform .5s var(--ease);
+}
+.ndw-relief__jobs span.is-done{color:var(--text);border-color:rgba(74,222,128,.25);background:rgba(74,222,128,.05)}
+.ndw-relief__jobs span.is-done::before{background-color:var(--good);border-color:var(--good);transform:scale(1.05)}
+
+/* =========================================================
+   COMPARATIVO: página barata x página que se paga
+   ========================================================= */
+/* o limite fica no próprio título: "ch" no container mede pela fonte do body (16px)
+   e acabaria espremendo a headline em linhas curtas demais */
+.ndw-vs__head{text-align:center}
+.ndw-vs__head .ndw-title{max-width:22ch;margin-inline:auto}
+.ndw-vs__head .ndw-lead{margin:18px auto 0;text-align:center;max-width:52ch}
+.ndw-vs{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,1.8vw,22px);margin-top:clamp(38px,4.6vw,56px)}
+.ndw-vs__col{
+  position:relative;overflow:hidden;border-radius:var(--r-lg);
+  padding:clamp(22px,2.6vw,32px);border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,.005));
+  transition:border-color var(--t),transform var(--t-slow) var(--ease);
+}
+/* o lado ruim fica rebaixado, o bom elevado: a hierarquia se lê antes do texto */
+.ndw-vs__col--good{
+  border-color:rgba(74,222,128,.22);
+  background:radial-gradient(90% 60% at 50% 0%,rgba(74,222,128,.07),transparent 70%),linear-gradient(180deg,#14171D,#0B0C10);
+  box-shadow:var(--sh-lg),var(--edge-2);
+}
+/* elevação por margem, não por transform: o transform pertence ao reveal e ao hover */
+@media (min-width:981px){
+  .ndw-vs__col--good{margin-top:-12px}
+}
+.ndw-vs__col--good::before{
+  content:"";position:absolute;top:0;left:12%;right:12%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(74,222,128,.7),transparent);
+}
+.ndw-vs__tag{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 14px 7px 10px;border-radius:999px;
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;line-height:1;
+  border:1px solid var(--line-2);background:rgba(255,255,255,.03);color:var(--muted);
+}
+.ndw-vs__col--good .ndw-vs__tag{border-color:rgba(74,222,128,.28);background:rgba(74,222,128,.07);color:#A7F0C3}
+.ndw-vs__tag i{width:6px;height:6px;border-radius:50%;background:var(--muted-2)}
+.ndw-vs__col--good .ndw-vs__tag i{background:var(--good);box-shadow:0 0 0 3px rgba(74,222,128,.16)}
+.ndw-vs__col h3{
+  margin-top:16px;font-family:var(--f-title);font-weight:500;
+  font-size:clamp(20px,2vw,25px);letter-spacing:-.025em;line-height:1.2;padding-bottom:.06em;
+  color:var(--muted);
+}
+.ndw-vs__col--good h3{color:var(--text)}
+.ndw-vs__list{list-style:none;margin-top:clamp(20px,2.4vw,28px);display:flex;flex-direction:column;gap:14px}
+.ndw-vs__list li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.ndw-vs__col--good .ndw-vs__list li{color:var(--text)}
+.ndw-vs__list svg{width:17px;height:17px;flex-shrink:0;margin-top:2px;color:var(--muted-2)}
+.ndw-vs__col--good .ndw-vs__list svg{color:var(--good)}
+.ndw-vs__foot{
+  margin-top:clamp(24px,3vw,32px);padding-top:clamp(18px,2.2vw,24px);border-top:1px solid var(--line);
+  font-size:13.5px;line-height:1.55;color:var(--muted-2);
+}
+.ndw-vs__col--good .ndw-vs__foot{color:var(--muted)}
+.ndw-vs__foot b{color:var(--text);font-weight:500}
+.ndw-vs__col--good .ndw-vs__foot b{color:#fff}
+
+/* =========================================================
+   6. OFERTA + FAQ
+   ========================================================= */
+.ndw-offer{position:relative}
+.ndw-offer::before{
+  content:"";position:absolute;left:50%;top:0;width:min(900px,100%);height:600px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(50% 50% at 50% 30%,rgba(170,190,240,.08),transparent 70%);
+}
+.ndw-price{
+  position:relative;isolation:isolate;overflow:hidden;
+  max-width:880px;margin:clamp(48px,6vw,68px) auto 0;border-radius:var(--r-xl);
+  background:linear-gradient(180deg,#14171D,#0B0C10);border:1px solid var(--line-2);
+  box-shadow:var(--sh-lg),var(--edge-2);
+  text-align:center;
+}
+.ndw-price::after{
+  content:"";position:absolute;top:0;left:50%;width:60%;height:1px;transform:translateX(-50%);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+}
+.ndw-price__grid{
+  position:absolute;inset:0;z-index:-1;opacity:.5;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:40px 40px;-webkit-mask-image:radial-gradient(60% 55% at 50% 0%,#000,transparent);mask-image:radial-gradient(60% 55% at 50% 0%,#000,transparent);
+}
+.ndw-price__main{padding:clamp(34px,4.4vw,52px) clamp(22px,5vw,58px) clamp(30px,3.6vw,42px)}
+.ndw-price__badge{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:20px;
+  padding:7px 14px 7px 10px;border-radius:999px;
+  border:1px solid rgba(200,169,136,.24);background:rgba(200,169,136,.06);
+  font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--warm);
+}
+.ndw-price__badge svg{width:13px;height:13px}
+.ndw-price__from{font-size:15px;color:var(--muted)}
+.ndw-price__val{
+  display:flex;justify-content:center;align-items:flex-start;gap:10px;margin:8px 0 14px;
+  font-family:var(--f-title);font-weight:500;line-height:.9;letter-spacing:-.055em;
+}
+.ndw-price__val small{font-size:clamp(20px,2.4vw,30px);letter-spacing:-.02em;margin-top:.5em;color:var(--muted)}
+.ndw-price__val b{
+  font-weight:500;font-size:clamp(64px,10vw,124px);font-variant-numeric:tabular-nums;
+  background:linear-gradient(180deg,#fff 30%,#8F8B85 110%);-webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.ndw-price__note{max-width:46ch;margin:0 auto;font-size:14.5px;color:var(--muted);line-height:1.6}
+.ndw-price__pay{display:inline-block;margin-top:6px;font-size:13px;color:var(--muted-2)}
+.ndw-price__anchor{
+  display:inline-flex;align-items:center;gap:10px;margin-top:22px;
+  padding:11px 18px 11px 14px;border-radius:var(--r);text-align:left;
+  border:1px solid rgba(74,222,128,.22);background:rgba(74,222,128,.05);
+}
+.ndw-price__anchor svg{width:17px;height:17px;color:var(--good);flex-shrink:0}
+.ndw-price__anchor span{font-size:13.5px;color:var(--text);line-height:1.4}
+.ndw-price__anchor b{font-weight:600;color:#fff}
+.ndw-price__cta{display:flex;flex-direction:column;align-items:center;margin-top:30px}
+
+/* entregáveis */
+.ndw-price__deliver{padding:clamp(26px,3.4vw,36px) clamp(18px,4vw,44px);border-top:1px solid var(--line);text-align:left}
+.ndw-price__dtitle{
+  display:flex;align-items:center;gap:11px;margin-bottom:20px;
+  font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);
+}
+.ndw-price__dtitle::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line-2),transparent)}
+.ndw-deliv{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.ndw-deliv li{
+  display:flex;align-items:flex-start;gap:12px;padding:13px 15px;border-radius:var(--r-sm);
+  border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.028),rgba(255,255,255,.006));
+  transition:border-color .45s,background .45s,transform .5s var(--ease);
+}
+.ndw-deliv li:hover{border-color:var(--line-2);background:rgba(255,255,255,.05);transform:translateY(-3px)}
+.ndw-deliv__ic{
+  width:30px;height:30px;border-radius:var(--r-xs);flex-shrink:0;display:grid;place-items:center;
+  background:rgba(255,255,255,.05);border:1px solid var(--line-2);color:var(--text);
+  transition:background .45s,color .45s;
+}
+.ndw-deliv__ic svg{width:15px;height:15px}
+.ndw-deliv li:hover .ndw-deliv__ic{background:rgba(255,255,255,.1)}
+.ndw-deliv strong{display:block;font-size:14px;font-weight:500;color:var(--text);line-height:1.3;letter-spacing:-.01em}
+.ndw-deliv small{display:block;margin-top:4px;font-size:12.5px;color:var(--muted);line-height:1.45}
+
+.ndw-proofs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.ndw-proofs li{
+  list-style:none;display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:20px 18px;font-size:13.5px;color:var(--text);text-align:left;line-height:1.35;
+}
+.ndw-proofs li+li{border-left:1px solid var(--line)}
+.ndw-proofs svg{width:17px;height:17px;color:var(--good);flex-shrink:0}
+
+.ndw-faq{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,110px);margin-top:clamp(80px,9vw,120px)}
+.ndw-faq__side .ndw-lead{margin-top:18px}
+.ndw-faq__help{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:14.5px;color:var(--text);padding-bottom:3px;border-bottom:1px solid var(--line-2);transition:border-color .3s,gap .4s var(--ease)}
+.ndw-faq__help:hover{border-color:var(--text);gap:14px}
+.ndw-faq__help svg{width:16px;height:16px}
+.ndw-faq__list{border-top:1px solid var(--line)}
+.ndw-faq__item{border-bottom:1px solid var(--line);transition:border-color .4s}
+.ndw-faq__item.is-open{border-color:var(--line-2)}
+.ndw .ndw-faq__q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:25px 0;text-align:left;background:none;color:var(--text);
+  font-family:var(--f-title);font-weight:500;font-size:clamp(17px,1.5vw,20px);letter-spacing:-.015em;line-height:1.35;
+  transition:color .3s,padding .5s var(--ease);
+}
+.ndw .ndw-faq__q:hover{color:#fff;background:none;padding-left:6px}
+.ndw-faq__plus{position:relative;width:32px;height:32px;border-radius:50%;border:1px solid var(--line-2);flex-shrink:0;transition:background .4s,border-color .4s,transform .6s var(--ease)}
+.ndw-faq__plus::before,.ndw-faq__plus::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;margin:-.75px 0 0 -5.5px;background:currentColor;border-radius:2px;transition:transform .5s var(--ease)}
+.ndw-faq__plus::after{transform:rotate(90deg)}
+.ndw-faq__item.is-open .ndw-faq__plus{background:var(--text);border-color:var(--text);color:#0B0B0E;transform:rotate(180deg)}
+.ndw-faq__item.is-open .ndw-faq__plus::after{transform:rotate(0)}
+.ndw-faq__a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.ndw-faq__a > div{overflow:hidden}
+.ndw-faq__a p{padding:0 56px 26px 0;color:var(--muted);font-size:15.5px;line-height:1.65;opacity:0;transform:translateY(-6px);transition:opacity .4s,transform .6s var(--ease)}
+.ndw-faq__item.is-open .ndw-faq__a{grid-template-rows:1fr}
+.ndw-faq__item.is-open .ndw-faq__a p{opacity:1;transform:none;transition-delay:.12s}
+
+/* =========================================================
+   7. CTA FINAL + RODAPÉ
+   ========================================================= */
+.ndw-final{position:relative;overflow:hidden;padding:clamp(96px,12vw,150px) 0 0;text-align:center}
+.ndw-final .ndw-beam{left:50%;top:-6%;height:62%}
+.ndw-final .ndw-horizon{top:74%;transform:translateX(-50%)}
+.ndw-final__glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(45% 40% at 50% 78%,rgba(140,88,52,.28),transparent 70%)}
+.ndw-final .ndw-title{font-size:clamp(36px,5.6vw,74px);line-height:1.08;letter-spacing:-.045em;max-width:24ch;padding-bottom:.1em}
+.ndw-final .ndw-lead{margin:22px auto 0;text-align:center;font-size:clamp(17px,1.5vw,20px)}
+.ndw-final__cta{display:flex;flex-direction:column;align-items:center;margin-top:36px}
+.ndw-contact{
+  display:inline-flex;align-items:center;gap:14px;margin-top:64px;padding:8px 8px 8px 8px;border-radius:999px;text-align:left;
+  background:rgba(20,22,28,.7);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid var(--line-2);
+}
+.ndw-contact__av{position:relative;width:48px;height:48px;border-radius:50%;overflow:hidden;border:1px solid var(--line-2);flex-shrink:0}
+.ndw-contact__av .ndw-photo:empty::after{content:none}
+.ndw-contact__av img{width:100%;height:100%;object-fit:cover;object-position:center 12%}
+.ndw-contact strong{display:block;font-family:var(--f-title);font-weight:500;font-size:15.5px;line-height:1.25}
+.ndw-contact a.ndw-contact__ig{font-size:13.5px;color:var(--muted);transition:color .3s}
+.ndw-contact a.ndw-contact__ig:hover{color:var(--text)}
+.ndw-contact__wa{
+  margin-left:10px;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(74,222,128,.12);color:var(--good);border:1px solid rgba(74,222,128,.3);transition:background .4s,color .4s,transform .6s var(--ease);
+}
+.ndw-contact__wa svg{width:20px;height:20px}
+.ndw-contact__wa:hover{background:var(--good);color:#0B0B0E;transform:rotate(-12deg) scale(1.05)}
+.ndw-wordmark{
+  position:relative;z-index:2;margin-top:clamp(64px,8vw,104px);
+  /* --wm-size é medido no JS pra marca caber exata no container em qualquer largura */
+  font-family:var(--f-title);font-weight:500;font-size:var(--wm-size,clamp(34px,8.4vw,140px));
+  line-height:.9;letter-spacing:-.06em;white-space:nowrap;
+  background-image:linear-gradient(100deg,
+    rgba(230,230,230,.13) 0%,rgba(230,230,230,.13) 38%,
+    rgba(255,255,255,.92) 50%,
+    rgba(230,230,230,.13) 62%,rgba(230,230,230,.13) 100%);
+  /* repeat-x: com no-repeat a varredura deixa trecho do texto sem fundo, e ele some */
+  background-size:260% 100%;background-repeat:repeat-x;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,#000 42%,transparent 94%);
+  mask-image:linear-gradient(180deg,#000 0%,#000 42%,transparent 94%);
+  animation:ndwShine 7s linear infinite;
+  user-select:none;pointer-events:none;
+  /* o margin reserva o espaço do translate pra marca nunca encostar no rodapé */
+  margin-bottom:44px;
+  transform:translateY(var(--wy,40px));
+  transition:transform .3s linear;
+}
+.ndw-foot{
+  position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:26px 0 30px;font-size:13.5px;color:var(--muted-2);
+}
+.ndw-foot::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-2) 22%,rgba(255,255,255,.28) 50%,var(--line-2) 78%,transparent);
+}
+.ndw-foot a{color:var(--muted);transition:color .3s}
+.ndw-foot a:hover{color:var(--text)}
+.ndw .ndw-top{display:inline-flex;align-items:center;gap:8px;color:var(--muted);background:none}
+.ndw .ndw-top:hover{color:var(--text);background:none}
+.ndw-top svg{width:15px;height:15px;transition:transform .5s var(--ease)}
+.ndw-top:hover svg{transform:translateY(-3px)}
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+@keyframes ndwBeam{0%,100%{opacity:.8}50%{opacity:1}}
+@keyframes ndwPulseWarm{0%{box-shadow:0 0 0 0 rgba(200,169,136,.55)}70%,100%{box-shadow:0 0 0 8px rgba(200,169,136,0)}}
+@keyframes ndwFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-10px,0)}}
+@keyframes ndwSpin{to{--ndw-ang:360deg}}
+@keyframes ndwMarquee{to{transform:translateX(-50%)}}
+@keyframes ndwSweep{from{--ndw-sweep:-40%}to{--ndw-sweep:110%}}
+@keyframes ndwShine{from{background-position:160% 0}to{background-position:-60% 0}}
+@keyframes ndwRing{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+
+/* visuais dos pilares */
+@keyframes ndwVerify{0%,10%{opacity:0;transform:scale(.4)}22%,86%{opacity:1;transform:scale(1)}96%,100%{opacity:0;transform:scale(.9)}}
+@keyframes ndwAlign{0%,6%{transform:scaleX(.24);opacity:.25}22%,84%{transform:scaleX(1);opacity:1}96%,100%{transform:scaleX(.24);opacity:.25}}
+@keyframes ndwStarOn{0%,16%{opacity:.18;transform:scale(.85)}32%,86%{opacity:1;transform:scale(1)}96%,100%{opacity:.18;transform:scale(.85)}}
+@keyframes ndwCtaPress{0%,38%{transform:scale(1)}44%{transform:scale(.93)}54%,100%{transform:scale(1)}}
+@keyframes ndwCtaRipple{0%,40%{opacity:0;transform:scale(.25)}47%{opacity:.85;transform:scale(.5)}70%,100%{opacity:0;transform:scale(1.2)}}
+@keyframes ndwCursor{
+  0%{opacity:0;transform:translate(30px,38px)}
+  14%{opacity:1}
+  38%{opacity:1;transform:translate(6px,0)}
+  45%{transform:translate(6px,5px)}
+  54%{transform:translate(6px,0)}
+  74%{opacity:1;transform:translate(6px,0)}
+  88%,100%{opacity:0;transform:translate(30px,38px)}
+}
+@keyframes ndwToast{0%,50%{opacity:0;transform:translateX(-50%) translateY(14px)}62%,86%{opacity:1;transform:translateX(-50%) translateY(0)}96%,100%{opacity:0;transform:translateX(-50%) translateY(14px)}}
+@keyframes ndwBarGrow{0%,8%{transform:scaleY(.1)}32%,82%{transform:scaleY(var(--bh,.5))}96%,100%{transform:scaleY(.1)}}
+@keyframes ndwUpPulse{0%,20%{opacity:0;transform:translateY(6px)}36%,86%{opacity:1;transform:none}96%,100%{opacity:0;transform:translateY(6px)}}
+@keyframes ndwRunBad{0%{left:0;top:-3px;opacity:0}8%{opacity:1}58%{left:66.66%;top:-3px;opacity:1}80%{left:75%;top:26px;opacity:0}100%{left:75%;top:26px;opacity:0}}
+@keyframes ndwRunGood{0%{left:0;opacity:0}8%{opacity:1}86%{left:calc(100% - 7px);opacity:1}100%{left:calc(100% - 7px);opacity:0}}
+@keyframes ndwRunBadV{0%{top:0;left:-3px;opacity:0}8%{opacity:1}58%{top:66.66%;left:-3px;opacity:1}80%{top:74%;left:22px;opacity:0}100%{top:74%;left:22px;opacity:0}}
+@keyframes ndwRunGoodV{0%{top:0;opacity:0}8%{opacity:1}86%{top:calc(100% - 7px);opacity:1}100%{top:calc(100% - 7px);opacity:0}}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width:1100px){
+  .ndw-nav__links{display:none}
+  .ndw-nav{padding:8px 8px 8px 16px}
+  .ndw-hero{padding:120px 0 90px}
+  .ndw-hero__grid{grid-template-columns:1fr;gap:clamp(28px,6vw,48px)}
+  .ndw-hero__sub{max-width:34em}
+  .ndw-beam{left:74%}
+  .ndw-stack{height:clamp(400px,62vw,520px);margin-top:16px}
+  .ndw-portrait{width:min(62%,320px)}
+  .ndw-problem__grid,.ndw-what__head,.ndw-faq{grid-template-columns:1fr}
+  .ndw-problem__grid{align-items:start;gap:clamp(34px,5vw,48px)}
+  .ndw-case{grid-template-columns:1.1fr 1fr;gap:18px;grid-template-rows:clamp(360px,42vw,440px)}
+  .ndw-case__info h3{font-size:clamp(21px,3vw,26px)}
+  .ndw-testi__in{grid-template-columns:1fr;justify-items:center;text-align:center;gap:clamp(20px,3vw,30px);padding:clamp(14px,1.6vw,20px)}
+  /* empilhado: manda a largura e deixa a altura seguir, senão o vertical fica minúsculo */
+  .ndw .ndw-video.is-portrait{width:min(100%,330px);height:auto}
+  .ndw-testi__quote{text-align:center;padding:0 clamp(6px,2vw,24px) clamp(8px,1.4vw,16px)}
+  .ndw-testi__quote blockquote{max-width:30ch;margin-inline:auto}
+  .ndw-testi__result{display:inline-flex;text-align:left}
+  .ndw-testi__who{justify-content:center}
+}
+@media (max-width:980px){
+  .ndw-pillars{grid-template-columns:repeat(2,1fr)}
+  .ndw-pillar:last-child{grid-column:span 2}
+  .ndw-case{grid-template-columns:1fr;grid-template-rows:min(46vw,340px) auto;gap:0}
+  .ndw-case__info{padding:18px 6px 6px}
+  .ndw-case__info h3{margin-top:14px}
+  .ndw-case__result{margin-top:20px}
+}
+@media (max-width:820px){
+  .ndw-sec{padding:clamp(80px,11vw,120px) 0}
+  .ndw-pillars{grid-template-columns:1fr;gap:14px}
+  .ndw-pillar:last-child{grid-column:auto}
+  .ndw-viz{height:clamp(158px,40vw,190px)}
+  .ndw-steps{grid-template-columns:1fr;gap:12px;padding-left:34px;margin-top:clamp(48px,8vw,72px)}
+  .ndw-steps__line{top:0;bottom:0;left:5px;right:auto;width:1px;height:auto}
+  .ndw-steps__fill{background:linear-gradient(180deg,rgba(230,230,230,.4),var(--text) 70%,var(--good));transform-origin:top;transform:scaleY(var(--p,0))}
+  .ndw-step{padding:20px 18px 22px}
+  .ndw-step.is-on{transform:translateX(3px)}
+  .ndw-step::before{top:26px;left:-34px}
+  .ndw-step__n{font-size:clamp(46px,13vw,66px)}
+  .ndw-step p{max-width:42ch}
+  .ndw-vs{grid-template-columns:1fr;gap:12px}
+  .ndw-deliv{grid-template-columns:1fr}
+  .ndw-proofs{grid-template-columns:1fr}
+  .ndw-proofs li{justify-content:flex-start;padding:15px 24px}
+  .ndw-proofs li+li{border-left:0;border-top:1px solid var(--line)}
+}
+@media (max-width:720px){
+  .ndw-wrap{width:calc(100% - 32px)}
+  .ndw-nav{top:10px;width:calc(100% - 20px);padding:7px 7px 7px 14px}
+  .ndw .ndw-nav .ndw-btn span.ndw-hide-sm{display:none}
+  .ndw .ndw-nav .ndw-btn{padding:5px 5px 5px 13px;font-size:11px;letter-spacing:.04em;gap:8px}
+  .ndw-nav .ndw-btn__ic{width:28px;height:28px}
+  .ndw-nav__progress{left:16px;right:16px}
+  .ndw-logo img{height:26px}
+
+  .ndw-hero{padding:104px 0 72px;min-height:auto}
+  .ndw-hero__badge{letter-spacing:.1em;font-size:10px;padding:6px 12px 6px 9px}
+  .ndw-h1{font-size:clamp(38px,11vw,52px);margin:20px 0 18px}
+  .ndw-hero__sub{font-size:16px}
+  .ndw-hero__cta{margin-top:28px}
+  .ndw .ndw-hero__cta .ndw-btn{width:100%;justify-content:space-between;padding:8px 8px 8px 22px}
+  .ndw-services{margin-top:28px;gap:8px}
+  .ndw-services span{font-size:12.5px;padding:7px 13px 7px 10px}
+  .ndw-stack{height:min(96vw,420px);margin-top:26px}
+  .ndw-portrait{width:min(66%,260px)}
+  .ndw-portrait__frame{border-radius:var(--r-md)}
+  .ndw-portrait__cap{left:9px;right:9px;bottom:9px;padding:10px 12px;border-radius:var(--r-sm)}
+  .ndw-portrait__cap strong{font-size:13.5px}
+  .ndw-portrait__cap span{font-size:11.5px}
+  .ndw-layer--chip1{right:-22%;top:4%}
+  .ndw-layer--chip2{left:-24%;bottom:44%}
+  .ndw-chip{font-size:11px;padding:7px 11px 7px 8px;gap:7px}
+  .ndw-chip__ic{width:20px;height:20px;border-radius:var(--r-xs)}
+  .ndw-chip__ic svg{width:11px;height:11px}
+
+  .ndw-strip{padding:clamp(24px,5vw,34px) 0 4px}
+  .ndw-strip__label{font-size:10px;letter-spacing:.14em;margin-bottom:14px}
+  .ndw-marquee__item{width:clamp(164px,44vw,200px);margin-right:10px;border-radius:var(--r-sm)}
+  .ndw-marquee__item figcaption{font-size:11px;padding:14px 10px 8px}
+
+  .ndw-issue{padding:15px 16px 15px 14px;gap:12px}
+  .ndw-issue__ic{width:27px;height:27px;border-radius:var(--r-xs)}
+  .ndw-issue__ic svg{width:13px;height:13px}
+  .ndw-issue__txt{font-size:14.5px}
+  .ndw-issue__sub{font-size:12.5px}
+  .ndw-issue__n{display:none}
+
+  .ndw-flow{padding:22px 16px 34px;border-radius:var(--r-lg)}
+  .ndw-flow__head{margin-bottom:32px;gap:14px}
+  .ndw-flow__cap{min-width:0;width:100%;font-size:13px}
+  .ndw .ndw-switch{width:100%;font-size:11.5px}
+  .ndw-switch span{padding:8px 6px}
+  .ndw-flow__nodes{grid-template-columns:1fr;gap:22px}
+  .ndw-node{flex-direction:row;text-align:left;gap:16px;align-items:center}
+  .ndw-node__ic{width:48px;height:48px}
+  .ndw-node__ic svg{width:19px;height:19px}
+  .ndw-node__lb{height:1.4em;font-size:11.5px}
+  .ndw-flow__track{top:24px;bottom:24px;left:24px;right:auto;width:1px;height:auto}
+  .ndw-flow__fill{background:linear-gradient(180deg,rgba(230,230,230,.15),rgba(230,230,230,.55) 66.6%,transparent 66.6%)}
+  .ndw-flow[data-state="good"] .ndw-flow__fill{background:linear-gradient(180deg,rgba(230,230,230,.2),rgba(74,222,128,.8))}
+  .ndw-flow__end{left:0;right:auto;top:66.66%;bottom:0;width:1px;height:auto;background:repeating-linear-gradient(180deg,rgba(248,113,113,.65) 0 5px,transparent 5px 11px)}
+  .ndw-flow__pulse{left:-3px;animation-name:ndwRunBadV}
+  .ndw-flow[data-state="good"] .ndw-flow__pulse{animation-name:ndwRunGoodV}
+
+  .ndw-pillar__in{padding:14px 14px 24px}
+  .ndw-pillar__body{padding:20px 6px 0}
+  .ndw-pillar h3{font-size:21px}
+  .ndw-pillar p{font-size:14.5px}
+
+  .ndw-works__tip .t-hover{display:none}
+  .ndw-works__tip .t-touch{display:inline}
+  .ndw-works__tip{font-size:12.5px;padding:9px 15px 9px 11px;align-items:flex-start}
+  .ndw-works__tip svg{margin-top:2px}
+
+  .ndw-case{padding:10px;gap:0;grid-template-rows:min(72vw,360px) auto}
+  .ndw-case__win{height:24px}
+  .ndw-case__info{padding:16px 4px 4px}
+  .ndw-case__info h3{margin-top:12px;font-size:clamp(21px,6vw,26px)}
+  .ndw-case__seg{font-size:13.5px;margin-top:7px}
+  .ndw-case__result{margin-top:18px;padding:13px 14px}
+  .ndw-case__hint{display:none}
+  .ndw-slider__foot{gap:12px;margin-top:16px}
+  .ndw-slider__count{font-size:12.5px}
+  .ndw .ndw-slider__arrows button{width:38px;height:38px}
+
+  .ndw-testi__card{border-radius:var(--r-lg)}
+  .ndw-testi__in{border-radius:calc(var(--r-lg) - 1px);padding:10px}
+  .ndw .ndw-video{border-radius:var(--r)}
+  .ndw .ndw-video.is-portrait{width:min(100%,300px);height:auto}
+  .ndw-video__play{width:58px;height:58px;margin:-29px 0 0 -29px}
+  .ndw-video__play svg{width:19px;height:19px}
+  .ndw-video__lbl{left:12px;bottom:12px;font-size:11.5px;padding:6px 11px}
+  .ndw-testi__quote{padding:4px 4px 10px}
+  .ndw-testi__quote blockquote{max-width:24ch}
+  .ndw-testi__mark{font-size:62px;height:24px}
+  .ndw-testi__result{padding:12px 14px;gap:10px;margin-top:18px}
+  .ndw-testi__result span{font-size:12.5px}
+  .ndw-testi__who{gap:12px;margin-top:20px;padding-top:18px}
+
+  .ndw-vs__col{padding:20px 18px}
+  .ndw-vs__col h3{font-size:19px;margin-top:14px}
+  .ndw-vs__list{gap:12px;margin-top:18px}
+  .ndw-vs__list li{font-size:13.5px;gap:10px}
+  .ndw-vs__foot{font-size:12.5px;margin-top:20px;padding-top:16px}
+
+  .ndw-relief{padding:24px 20px;gap:18px}
+  .ndw-relief__av{width:58px;height:58px}
+  .ndw-relief p{font-size:clamp(21px,6.4vw,28px)}
+  .ndw-relief__jobs{margin-top:18px;gap:7px}
+  .ndw-relief__jobs span{font-size:11.5px;padding:6px 11px 6px 8px}
+
+  .ndw-price{border-radius:var(--r-lg)}
+  .ndw-price__main{padding:30px 18px 26px}
+  .ndw-price__badge{font-size:10px;letter-spacing:.12em;margin-bottom:16px}
+  .ndw-price__val b{font-size:clamp(58px,17vw,78px)}
+  .ndw-price__note{font-size:13.5px}
+  .ndw-price__anchor{padding:10px 14px 10px 12px;border-radius:var(--r-sm)}
+  .ndw-price__anchor span{font-size:12.5px}
+  .ndw .ndw-price__cta .ndw-btn{width:100%;justify-content:space-between;padding:8px 8px 8px 20px;font-size:12.5px}
+  .ndw-price__deliver{padding:24px 16px}
+  .ndw-deliv li{padding:12px 13px;gap:11px}
+  .ndw-proofs li{padding:14px 18px;font-size:13px}
+
+  .ndw-faq{margin-top:clamp(80px,14vw,120px)}
+  .ndw .ndw-faq__q{padding:20px 0;font-size:16px;gap:16px}
+  .ndw-faq__plus{width:28px;height:28px}
+  .ndw-faq__a p{padding:0 0 22px}
+
+  .ndw-final{padding-top:clamp(100px,18vw,140px)}
+  .ndw .ndw-final__cta .ndw-btn{width:100%;justify-content:space-between;padding:8px 8px 8px 22px}
+  .ndw-contact{border-radius:var(--r-md);margin-top:44px;width:100%;justify-content:flex-start}
+  .ndw-contact__wa{margin-left:auto}
+  .ndw-wordmark{margin-top:clamp(60px,14vw,90px)}
+  .ndw-foot{padding:22px 0 26px;font-size:12.5px;justify-content:center;text-align:center}
+}
+@media (max-width:420px){
+  .ndw-wrap{width:calc(100% - 26px)}
+  .ndw .ndw-nav .ndw-btn{padding:5px 5px 5px 11px;font-size:10px}
+  .ndw-logo img{height:24px}
+  .ndw-h1{font-size:clamp(34px,11.5vw,44px)}
+  .ndw-stack{height:min(104vw,380px)}
+  .ndw-portrait{width:min(70%,225px)}
+  .ndw-layer--chip1{right:-28%;top:4%}
+  .ndw-layer--chip2{left:-30%;bottom:46%}
+  .ndw-chip{font-size:10.5px}
+  .ndw-title{font-size:clamp(28px,8.2vw,36px)}
+  .ndw-statement{font-size:clamp(32px,10vw,44px)}
+  .ndw-price__val b{font-size:clamp(52px,18vw,66px)}
+  .ndw-case{grid-template-rows:min(80vw,320px) auto}
+}
+@media (prefers-reduced-motion:reduce){
+  .ndw *,.ndw *::before,.ndw *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .ndw--js [data-reveal]:not(.is-in){opacity:1;transform:none;filter:none}
+  .ndw-viz{display:none}
+  .ndw-case.is-playing .ndw-case__screen img{transform:none}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWJBQ8DZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- =======================================================
+     LANDING - FERNANDO ANDRADE
+     WhatsApp e mensagem de abertura ficam no <script> (NDW_WA / NDW_MSG)
+     ======================================================= -->
+<div class="ndw" id="ndw-top">
+
+  <!-- fundo global: profundidade contínua atrás de todas as seções -->
+  <div class="ndw-bg" aria-hidden="true">
+    <div class="ndw-bg__deep"></div>
+    <canvas class="ndw-depth"></canvas>
+    <div class="ndw-bg__vig"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="ndw-nav" aria-label="Navegação principal">
+    <a href="#ndw-top" class="ndw-logo" aria-label="Fernando Andrade, início"><img src="assets/fernando/ferLogo.webp" alt="Fernando Andrade" width="280" height="280"></a>
+    <div class="ndw-nav__links">
+      <a href="#projetos">Projetos</a>
+      <a href="#problema">O problema</a>
+      <a href="#solucao">Solução</a>
+      <a href="#processo">Processo</a>
+      <a href="#investimento">Investimento</a>
+    </div>
+    <a class="ndw-btn" data-wa data-magnetic href="#">
+      <span>Orçamento<span class="ndw-hide-sm"> no WhatsApp</span></span>
+      <span class="ndw-btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+    </a>
+    <div class="ndw-nav__progress"><i></i></div>
+  </nav>
+
+  <!-- ===================== 1. HERO ===================== -->
+  <header class="ndw-hero">
+    <div class="ndw-hero__bg">
+      <canvas class="ndw-fx" aria-hidden="true"></canvas>
+      <div class="ndw-hero__glow"></div>
+      <div class="ndw-beam"></div>
+      <div class="ndw-horizon"></div>
+    </div>
+
+    <div class="ndw-wrap ndw-hero__grid">
+      <div class="ndw-hero__copy">
+        <span class="ndw-hero__badge" data-reveal><i></i>Para negócios que investem em anúncios</span>
+
+        <h1 class="ndw-h1">
+          <span class="ndw-fade" data-reveal style="--d:.12s">Landing Pages</span>
+          <span class="ndw-dim ndw-serif" data-reveal style="--d:.24s">para negócios</span>
+        </h1>
+
+        <p class="ndw-hero__sub" data-reveal style="--d:.36s">Uma página bem feita decide se o clique que você pagou <em>vira cliente ou vira custo.</em></p>
+
+        <div class="ndw-hero__cta" data-reveal style="--d:.48s">
+          <a class="ndw-btn" data-wa data-magnetic href="#">
+            Quero minha landing
+            <span class="ndw-btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+
+        <div class="ndw-proofbar" data-reveal style="--d:.6s">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 9h18M9 21V9"/></svg>
+            <b>+150 projetos</b><span>desenvolvidos</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/></svg>
+            <b>Atendimento direto</b><span>comigo</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <b>A partir de R$ 1.347</b><span>por projeto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ndw-stack" data-reveal="scale" style="--d:.3s">
+        <div class="ndw-stack__inner">
+          <div class="ndw-portrait">
+            <div class="ndw-portrait__glow" aria-hidden="true"></div>
+            <div class="ndw-portrait__frame">
+              <div class="ndw-photo"><img src="assets/fernando/fer.webp" alt="Fernando Andrade" width="800" height="740" fetchpriority="high"></div>
+              <div class="ndw-portrait__cap"><strong>Fernando Andrade</strong><span>Web designer</span></div>
+            </div>
+            <div class="ndw-layer ndw-layer--chip1" data-depth="34" aria-hidden="true">
+              <div class="ndw-chip"><span class="ndw-chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Feita pro celular</div>
+            </div>
+            <div class="ndw-layer ndw-layer--chip2" data-depth="40" aria-hidden="true">
+              <div class="ndw-chip"><span class="ndw-chip__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Design sob medida</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FAIXA DE PROJETOS ============ -->
+  <div class="ndw-strip" id="trabalhos">
+    <p class="ndw-strip__label">Páginas que eu já coloquei no ar</p>
+    <div class="ndw-marquee">
+      <div class="ndw-marquee__track">
+        <figure class="ndw-marquee__item"><img src="assets/cases/Wish.webp" alt="Página da Wish Imported" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Wish Imported</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/TajStudio.webp" alt="Página da TAJ Studio" width="2194" height="830" loading="lazy" decoding="async"><figcaption>TAJ Studio</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/GreenHouse.webp" alt="Página da GreenHouse B3" width="2194" height="830" loading="lazy" decoding="async"><figcaption>GreenHouse B3</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/GreenHouse2.webp" alt="Página da Loja GreenHouse" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Loja GreenHouse</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/Fort.webp" alt="Página da Fort Treinamentos" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Fort Treinamentos</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/Constrolux.webp" alt="Página da Constrolux" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Constrolux</figcaption></figure>
+        <figure class="ndw-marquee__item"><img src="assets/cases/FerAndrade.webp" alt="Página do FerAndrade Web" width="2194" height="830" loading="lazy" decoding="async"><figcaption>FerAndrade Web</figcaption></figure>
+
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/Wish.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Wish Imported</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/TajStudio.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>TAJ Studio</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/GreenHouse.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>GreenHouse B3</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/GreenHouse2.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Loja GreenHouse</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/Fort.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Fort Treinamentos</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/Constrolux.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>Constrolux</figcaption></figure>
+        <figure class="ndw-marquee__item" aria-hidden="true"><img src="assets/cases/FerAndrade.webp" alt="" width="2194" height="830" loading="lazy" decoding="async"><figcaption>FerAndrade Web</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== 4. PROVA ===================== -->
+  <section class="ndw-sec ndw-proof" id="projetos">
+    <div class="ndw-wrap">
+      <div class="ndw-proof__head">
+        <div>
+          <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Projetos</span>
+          <h2 class="ndw-title" data-reveal style="--d:.1s"><span class="ndw-fade">Veja o nível das páginas</span> <span class="ndw-dim ndw-serif">que eu entrego.</span></h2>
+        </div>
+      </div>
+
+      <p class="ndw-works__tip" data-reveal style="--d:.16s">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+        <span>Cada projeto <b>rola a página inteira</b>, do topo até o rodapé. <span class="t-hover">Use as setas pra navegar.</span><span class="t-touch">Arraste pro lado pra ver os outros.</span></span>
+      </p>
+
+      <!-- slider de cases: cada slide rola o print da página inteira -->
+      <div class="ndw-slider" data-reveal="scale" style="--d:.2s">
+        <div class="ndw-slider__viewport">
+          <div class="ndw-slider__track">
+
+            <article class="ndw-case">
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/WishFull.webp" alt="Página de captura da Wish Imported" width="2523" height="16383" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Página de captura</span>
+                <h3>Wish Imported</h3>
+                <p class="ndw-case__seg">Loja Apple. Página do lançamento do iPhone 18.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+80 leads qualificados</b><small>captados pela página</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case">
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/TajStudioFull.webp" alt="Página de captação da TAJ Studio" width="2194" height="6798" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Captura e qualificação</span>
+                <h3>TAJ Studio</h3>
+                <p class="ndw-case__seg">Agência full service de marketing digital.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+14 projetos fechados</b><small>em 2 meses de operação</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case">
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/GreenHouseFull.webp" alt="Landing page da GreenHouse B3" width="2194" height="9982" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Landing page</span>
+                <h3>GreenHouse B3</h3>
+                <p class="ndw-case__seg">Ecossistema de trading.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>Ticket 20% maior</b><small>pela percepção de valor da marca</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case">
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/GreenHouse2Full.webp" alt="Página de vendas da loja GreenHouse" width="2194" height="5841" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Página de vendas</span>
+                <h3>Loja GreenHouse</h3>
+                <p class="ndw-case__seg">Braço de produtos do ecossistema de trade.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+13% de conversão</b><small>com o mesmo volume de tráfego</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case" hidden data-extra>
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/FortFull.webp" alt="Landing page institucional da Fort Treinamentos" width="2236" height="10085" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Landing institucional</span>
+                <h3>Fort Treinamentos</h3>
+                <p class="ndw-case__seg">Treinamentos de NR e normas de segurança.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+3 contratos fechados</b><small>nas 2 primeiras semanas no ar</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case" hidden data-extra>
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/ConstroluxFull.webp" alt="Landing page da Constrolux" width="2236" height="13164" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Landing page</span>
+                <h3>Constrolux</h3>
+                <p class="ndw-case__seg">Plataforma de dimensionamento de usinas elétricas.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+23% de MRR</b><small>na receita recorrente da plataforma</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+            <article class="ndw-case" hidden data-extra>
+              <div class="ndw-case__frame">
+                <div class="ndw-case__win"><i></i><i></i><i></i><span></span></div>
+                <div class="ndw-case__screen"><img src="assets/cases/FerAndradeFull.webp" alt="Página de lançamentos do Fernando Andrade" width="2194" height="11070" loading="lazy" decoding="async"></div>
+                <button class="ndw-case__play" type="button"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>Ver a página inteira</span></button>
+              </div>
+              <div class="ndw-case__info">
+                <span class="ndw-case__kind"><i></i>Página de lançamento</span>
+                <h3>FerAndrade Web</h3>
+                <p class="ndw-case__seg">Minha própria estrutura de lançamentos.</p>
+                <div class="ndw-case__result">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+                  <span><b>+R$ 115 mil faturados</b><small>em 2026, com páginas como esta</small></span>
+                </div>
+                <p class="ndw-case__hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>A página rola sozinha aqui do lado</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="ndw-slider__foot">
+          <span class="ndw-slider__count"><b>01</b> / 04</span>
+          <div class="ndw-slider__bar"><i></i></div>
+          <div class="ndw-slider__arrows">
+            <button type="button" data-slide="-1" aria-label="Projeto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+            <button type="button" data-slide="1" aria-label="Próximo projeto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+
+        <div class="ndw-slider__more">
+          <button class="ndw-btn ndw-btn--ghost" type="button" data-expand>
+            Ver os outros 3 projetos
+            <span class="ndw-btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 2. PROBLEMA ===================== -->
+  <section class="ndw-sec ndw-problem" id="problema">
+    <div class="ndw-wrap">
+      <div class="ndw-problem__grid">
+        <div class="ndw-problem__text">
+          <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>O problema</span>
+          <h2 class="ndw-title" data-reveal style="--d:.1s"><span class="ndw-fade">Seu tráfego chega.</span> <span class="ndw-dim">A página é quem decide <span class="ndw-serif">o resto.</span></span></h2>
+          <p class="ndw-lead" data-reveal style="--d:.2s">Você já fez a parte cara: montou a oferta, subiu a campanha e paga por cada clique que chega até aqui.</p>
+          <p class="ndw-lead" data-reveal style="--d:.28s">Se a página não segura essa pessoa, ela volta pro Google em segundos. <strong>E quem aparece logo depois de você fica com o cliente.</strong></p>
+          <p class="ndw-lead" data-reveal style="--d:.36s">O clique que fecha e o clique que some custam exatamente o mesmo. <strong>A diferença está no que ele encontra quando chega.</strong></p>
+        </div>
+
+        <ul class="ndw-issues">
+          <li class="ndw-issue" data-reveal style="--d:.05s">
+            <span class="ndw-issue__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.2A9 9 0 0 1 21 13c0 .9-.1 1.7-.4 2.5M4.3 8.4A9 9 0 0 0 12 22c2 0 3.9-.7 5.4-1.8M2 2l20 20"/></svg></span>
+            <span><span class="ndw-issue__txt">A oferta não fica clara em 5 segundos</span><span class="ndw-issue__sub">Ele bate o olho, não entende o que você vende e volta pro anúncio do concorrente.</span></span>
+            <span class="ndw-issue__n">01</span>
+          </li>
+          <li class="ndw-issue" data-reveal style="--d:.15s">
+            <span class="ndw-issue__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.6 8 9.9 4.6-1.3 8-4.9 8-9.9V6l-8-3Z"/><path d="M12 8.5v4M12 16h.01"/></svg></span>
+            <span><span class="ndw-issue__txt">Nada ali mostra por que confiar em você</span><span class="ndw-issue__sub">Sem rosto, sem prova, sem resultado, a decisão fica sempre pra depois.</span></span>
+            <span class="ndw-issue__n">02</span>
+          </li>
+          <li class="ndw-issue" data-reveal style="--d:.25s">
+            <span class="ndw-issue__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M4 12h7M4 17h13"/><path d="M20 9.5 17.5 12 20 14.5"/></svg></span>
+            <span><span class="ndw-issue__txt">Não existe um próximo passo óbvio</span><span class="ndw-issue__sub">Ele até se interessou, mas não sabe onde clicar pra falar com você.</span></span>
+            <span class="ndw-issue__n">03</span>
+          </li>
+          <li class="ndw-issue" data-reveal style="--d:.35s">
+            <span class="ndw-issue__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg></span>
+            <span><span class="ndw-issue__txt">A página parece feita às pressas</span><span class="ndw-issue__sub">E o cliente conclui o óbvio: se a página é assim, o serviço também deve ser.</span></span>
+            <span class="ndw-issue__n">04</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- fluxo que muda com a rolagem -->
+      <div class="ndw-flow" data-state="bad" data-reveal>
+        <div class="ndw-flow__head">
+          <div class="ndw-flow__cap"><span class="a">O clique foi pago. O cliente ficou com outro.</span><span class="b">O mesmo clique, agora virando contato.</span></div>
+          <button class="ndw-switch" type="button" aria-label="Alternar entre página comum e landing estratégica"><span>Página comum</span><span>Landing estratégica</span></button>
+        </div>
+        <div class="ndw-flow__body">
+          <div class="ndw-flow__track"><div class="ndw-flow__fill"></div><div class="ndw-flow__end"></div><span class="ndw-flow__pulse"></span></div>
+          <div class="ndw-flow__nodes">
+            <div class="ndw-node">
+              <div class="ndw-node__ic"><svg class="a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="ndw-node__lb"><span class="a">Tráfego</span><span class="b">Tráfego</span></div>
+            </div>
+            <div class="ndw-node">
+              <div class="ndw-node__ic"><svg class="a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+              <div class="ndw-node__lb"><span class="a">Visitante</span><span class="b">Landing estratégica</span></div>
+            </div>
+            <div class="ndw-node">
+              <div class="ndw-node__ic"><svg class="a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.6 8 9.9 4.6-1.3 8-4.9 8-9.9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+              <div class="ndw-node__lb"><span class="a">Dúvida</span><span class="b">Confiança</span></div>
+            </div>
+            <div class="ndw-node ndw-node--end">
+              <div class="ndw-node__ic"><svg class="a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg><svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1M5.1 8l-2.9-.8M14 4.1 12 6M6 12l-1.9 2"/></svg></div>
+              <div class="ndw-node__lb"><span class="a">Abandono</span><span class="b">Ação</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="ndw-problem__close" data-reveal>Uma landing page bem estruturada resolve isso: <strong>organiza a oferta, constrói confiança e leva o visitante até a ação.</strong></p>
+    </div>
+  </section>
+
+  <!-- ===================== 3. O QUE EU FAÇO ===================== -->
+  <section class="ndw-sec ndw-what" id="solucao">
+    <div class="ndw-wrap">
+      <div class="ndw-what__head">
+        <div>
+          <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>O que eu faço</span>
+          <h2 class="ndw-title" data-reveal style="--d:.1s"><span class="ndw-fade">Eu transformo sua oferta em uma página</span> <span class="ndw-dim ndw-serif">que trabalha pelo seu negócio.</span></h2>
+        </div>
+        <p class="ndw-lead" data-reveal style="--d:.2s"><strong>Não é preencher um template.</strong> É entender o que você vende, organizar a comunicação e apresentar isso de um jeito que faça sentido pra quem está do outro lado da tela.</p>
+      </div>
+
+      <div class="ndw-pillars">
+        <article class="ndw-pillar" data-reveal style="--d:0s">
+          <div class="ndw-pillar__in" data-spot>
+            <div class="ndw-viz ndw-viz--clear" aria-hidden="true">
+              <div class="ndw-viz__in">
+                <div class="ndw-viz__brand">
+                  <span class="ndw-viz__av"></span>
+                  <span class="ndw-viz__nm"><i></i><u></u></span>
+                  <span class="ndw-viz__verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+                </div>
+                <div class="ndw-viz__lines"><i></i><i></i><i></i></div>
+                <div class="ndw-viz__stars">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1Z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="ndw-pillar__body">
+              <h3>Mais clareza</h3>
+              <p>Sua oferta fica fácil de entender e sua empresa passa o nível que ela realmente tem.</p>
+              <div class="ndw-pillar__stat"><b>5s</b><span>é todo o tempo que você tem pra ser entendido</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="ndw-pillar" data-reveal style="--d:.12s">
+          <div class="ndw-pillar__in" data-spot>
+            <div class="ndw-viz ndw-viz--act" aria-hidden="true">
+              <div class="ndw-viz__in">
+                <div class="ndw-viz__page">
+                  <i></i><i></i>
+                  <span class="ndw-viz__cta">Quero orçamento</span>
+                </div>
+                <svg class="ndw-viz__cursor" viewBox="0 0 24 24" fill="currentColor"><path d="m5 2 14 8.5-6.1 1.4L9.9 18Z"/></svg>
+                <span class="ndw-viz__toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Novo contato no WhatsApp</span>
+              </div>
+            </div>
+            <div class="ndw-pillar__body">
+              <h3>Mais ação</h3>
+              <p>Um caminho só, óbvio, repetido na hora certa: do interesse até a conversa com você.</p>
+              <div class="ndw-pillar__stat"><b>1 clique</b><span>do interesse até falar com você</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="ndw-pillar" data-reveal style="--d:.24s">
+          <div class="ndw-pillar__in" data-spot>
+            <div class="ndw-viz ndw-viz--sales" aria-hidden="true">
+              <div class="ndw-viz__in">
+                <div class="ndw-viz__head">
+                  <span class="ndw-viz__kpi">Conversão<small>mesmo tráfego</small></span>
+                  <span class="ndw-viz__up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15l7-7 7 7"/></svg>em alta</span>
+                </div>
+                <div class="ndw-viz__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="ndw-pillar__body">
+              <h3>Mais vendas</h3>
+              <p>O mesmo investimento em anúncio passa a render mais, porque a página para de desperdiçar clique.</p>
+              <div class="ndw-pillar__stat"><b>24/7</b><span>sua página vendendo sem depender de você</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="ndw-statement" data-words><span class="p1">Uma página bonita chama atenção.</span> <span class="p2">Uma página bem estruturada vende.</span></p>
+    </div>
+  </section>
+
+
+  <!-- ===================== DEPOIMENTO EM DESTAQUE ===================== -->
+  <section class="ndw-sec ndw-testi">
+    <div class="ndw-wrap">
+      <h2 class="ndw-testi__title" data-reveal><span class="ndw-fade">Quem já trabalhou comigo</span> <span class="ndw-dim ndw-serif">sabe a diferença.</span></h2>
+
+      <div class="ndw-testi__card" data-reveal="scale" style="--d:.1s">
+        <div class="ndw-testi__in">
+          <button class="ndw-video" type="button" data-video="https://ferandrade.com.br/wp-content/uploads/2025/11/Depoimento-Igor1.mp4" aria-label="Assistir o depoimento do Igor Reis">
+            <span class="ndw-video__poster"></span>
+            <span class="ndw-video__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7Z"/></svg></span>
+            <span class="ndw-video__lbl"><i></i>Depoimento em vídeo</span>
+          </button>
+
+          <div class="ndw-testi__quote">
+            <div class="ndw-testi__mark">“</div>
+            <blockquote>A página foi peça central no lançamento da <em>Viver de Dólar.</em> A oferta ficou clara e a gente só precisou atender quem chegava.</blockquote>
+
+            <div class="ndw-testi__result">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+              <span>Faturamento de <b>6 dígitos</b> no lançamento da mentoria <b>Viver de Dólar</b>, feito com a página do Fernando.</span>
+            </div>
+
+            <div class="ndw-testi__who">
+              <div class="ndw-testi__av"><div class="ndw-photo"><img src="assets/igor.avif" alt="Igor Reis" loading="lazy" decoding="async"></div></div>
+              <div>
+                <strong>Igor Reis</strong>
+                <span>Mentor de marketing digital · <a href="https://instagram.com/igorreis.c" target="_blank" rel="noopener">@igorreis.c</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. COMO FUNCIONA ===================== -->
+  <section class="ndw-sec ndw-how" id="processo">
+    <div class="ndw-wrap">
+      <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h10"/></svg>Como funciona</span>
+      <h2 class="ndw-title" data-reveal style="--d:.1s"><span class="ndw-fade">Do primeiro contato</span> <span class="ndw-dim ndw-serif">à página no ar.</span></h2>
+
+      <div class="ndw-steps">
+        <div class="ndw-steps__line"><div class="ndw-steps__fill"></div></div>
+        <div class="ndw-step">
+          <span class="ndw-step__n">01</span>
+          <h3>Você me conta sobre seu negócio</h3>
+          <p>Entendo sua oferta, seu público e o que você quer alcançar com a página.</p>
+        </div>
+        <div class="ndw-step">
+          <span class="ndw-step__n">02</span>
+          <h3>Estruturamos a página juntos</h3>
+          <p>Organizo a comunicação e a experiência de quem vai navegar nela.</p>
+        </div>
+        <div class="ndw-step">
+          <span class="ndw-step__n">03</span>
+          <h3>Eu desenvolvo</h3>
+          <p>Design, copy, desenvolvimento e versão mobile, tudo entra aqui.</p>
+        </div>
+        <div class="ndw-step">
+          <span class="ndw-step__n">04</span>
+          <h3>Revisamos e colocamos no ar</h3>
+          <p>Você aprova, ajustamos o que precisar, e publicamos.</p>
+        </div>
+      </div>
+
+      <div class="ndw-relief" data-spot data-reveal>
+        <div class="ndw-relief__av"><div class="ndw-photo"><img src="assets/fernando/fer.webp" alt="Fernando Andrade" width="800" height="740" loading="lazy" decoding="async"></div></div>
+        <div class="ndw-relief__main">
+          <p>Você não precisa entender de programação ou design. <strong><em>Isso é comigo.</em></strong></p>
+          <div class="ndw-relief__jobs" aria-hidden="true">
+            <span>Estratégia</span><span>Copywriting</span><span>Design</span><span>Desenvolvimento</span><span>Mobile</span><span>Publicação</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPARATIVO ===================== -->
+  <section class="ndw-sec ndw-vs-sec" id="diferenca">
+    <div class="ndw-wrap">
+      <div class="ndw-vs__head">
+        <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 8l-3 6h6ZM19 8l-3 6h6Z"/><path d="M5 8h14"/></svg>A diferença</span>
+        <h2 class="ndw-title ndw-title--center" data-reveal style="--d:.1s"><span class="ndw-fade">Tem página barata.</span> <span class="ndw-dim ndw-serif">E tem página que se paga.</span></h2>
+        <p class="ndw-lead" data-reveal style="--d:.2s">A diferença não aparece no orçamento. Ela aparece três meses depois, na conta do anúncio.</p>
+      </div>
+
+      <div class="ndw-vs">
+        <article class="ndw-vs__col" data-reveal style="--d:.1s">
+          <span class="ndw-vs__tag"><i></i>O orçamento mais barato</span>
+          <h3>Você economiza uma vez e paga todo mês</h3>
+          <ul class="ndw-vs__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Um template pronto com a sua cor e a sua logo por cima</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Texto que fala da empresa, não da dúvida de quem está comprando</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Entregue rápido e, a partir dali, ninguém mais responde</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Versão de celular deixada pro fim, se sobrar tempo</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>Blocos soltos, sem nenhum caminho até o contato</li>
+          </ul>
+          <p class="ndw-vs__foot">Você só descobre que a página não funciona <b>depois de queimar orçamento de anúncio nela.</b></p>
+        </article>
+
+        <article class="ndw-vs__col ndw-vs__col--good" data-spot data-reveal style="--d:.2s">
+          <span class="ndw-vs__tag"><i></i>Um projeto comigo</span>
+          <h3>Você investe uma vez e ela trabalha o ano inteiro</h3>
+          <ul class="ndw-vs__list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Estrutura desenhada em cima da sua oferta e do seu público</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Copy escrita pra responder o que trava a decisão de compra</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Ajustes até você aprovar e atendimento direto comigo depois</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Feita primeiro pro celular, que é de onde vem o seu tráfego</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cada bloco existe por um motivo: levar o visitante até você</li>
+          </ul>
+          <p class="ndw-vs__foot">O mesmo investimento em anúncio passa a render mais, <b>porque a página para de desperdiçar clique.</b></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. OFERTA + FAQ ===================== -->
+  <section class="ndw-sec ndw-offer" id="investimento">
+    <div class="ndw-wrap">
+      <div style="text-align:center">
+        <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Investimento</span>
+        <h2 class="ndw-title ndw-title--center" data-reveal style="--d:.1s;max-width:24ch"><span class="ndw-fade">Quanto custa colocar uma</span> <span class="ndw-dim ndw-serif">Landing dessas no ar?</span></h2>
+      </div>
+
+      <div class="ndw-price" data-reveal="scale" style="--d:.15s">
+        <div class="ndw-price__grid"></div>
+        <div class="ndw-price__main">
+          <span class="ndw-price__badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1M5.1 8l-2.9-.8M14 4.1 12 6M6 12l-1.9 2"/></svg>Projeto completo</span>
+          <p class="ndw-price__from">Projetos a partir de</p>
+          <div class="ndw-price__val"><small>R$</small><b data-count="1347">1.347</b></div>
+          <p class="ndw-price__note">O investimento varia conforme a estrutura e as necessidades do projeto.<br><span class="ndw-price__pay">Pagamento em Pix ou cartão.</span></p>
+          <div class="ndw-price__anchor">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 8h6v6"/></svg>
+            <span>Na maioria dos negócios, <b>um único cliente novo já paga a página inteira.</b> E cada mês com a página errada custa mais que isso em anúncio desperdiçado.</span>
+          </div>
+          <div class="ndw-price__cta">
+            <a class="ndw-btn" data-wa data-magnetic href="#">
+              Quero receber um orçamento
+              <span class="ndw-btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+            <span class="ndw-btn-note"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg>Atendimento direto pelo WhatsApp</span>
+          </div>
+        </div>
+
+        <div class="ndw-price__deliver">
+          <p class="ndw-price__dtitle">O que entra no projeto</p>
+          <ul class="ndw-deliv">
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8L3 5Z"/></svg></span>
+              <span><strong>Estrutura de conversão</strong><small>Blocos na ordem certa: da primeira dúvida até o botão de contato.</small></span>
+            </li>
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg></span>
+              <span><strong>Copywriting estratégico</strong><small>Texto escrito pra vender a sua oferta, não pra enfeitar a tela.</small></span>
+            </li>
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17.5" cy="10.5" r="1.3"/><circle cx="8.5" cy="7.5" r="1.3"/><circle cx="6.5" cy="12.5" r="1.3"/><path d="M12 2a10 10 0 1 0 0 20c.9 0 1.5-.7 1.5-1.5 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.8.7-1.5 1.5-1.5H16a6 6 0 0 0 6-6c0-4.9-4.5-8.8-10-8.8Z"/></svg></span>
+              <span><strong>Design sob medida</strong><small>Identidade própria do seu negócio. Zero cara de template pronto.</small></span>
+            </li>
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+              <span><strong>100% responsiva</strong><small>Feita primeiro pro celular, que é de onde vem a maior parte do tráfego pago.</small></span>
+            </li>
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+              <span><strong>Alta performance</strong><small>Carrega rápido. Cada segundo a menos é gente que não desiste antes de ler.</small></span>
+            </li>
+            <li>
+              <span class="ndw-deliv__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.6L18.5 9.5 13.9 11.4 12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="M18.5 16.5 19.3 18.7 21.5 19.5 19.3 20.3 18.5 22.5 17.7 20.3 15.5 19.5 17.7 18.7 18.5 16.5Z"/></svg></span>
+              <span><strong>IA Ready &amp; SEO</strong><small>Estrutura semântica que o Google e as IAs de busca conseguem ler e citar.</small></span>
+            </li>
+          </ul>
+        </div>
+
+        <ul class="ndw-proofs">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-opacity=".3"/><path d="m8 12 3 3 5-6"/></svg>Integração com WhatsApp, formulário e pixel</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-opacity=".3"/><path d="m8 12 3 3 5-6"/></svg>Rodadas de ajuste até você aprovar</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-opacity=".3"/><path d="m8 12 3 3 5-6"/></svg>Atendimento direto comigo, sem intermediário</li>
+        </ul>
+      </div>
+
+      <!-- FAQ -->
+      <div class="ndw-faq" id="faq">
+        <div class="ndw-faq__side">
+          <span class="ndw-tag" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Dúvidas</span>
+          <h2 class="ndw-title" data-reveal style="--d:.1s"><span class="ndw-fade">Perguntas</span> <span class="ndw-dim ndw-serif">frequentes</span></h2>
+          <p class="ndw-lead" data-reveal style="--d:.2s">O que a maioria dos clientes pergunta antes de começar.</p>
+          <a class="ndw-faq__help" data-wa href="#" data-reveal style="--d:.3s">Ficou outra dúvida? Me chama no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="ndw-faq__list">
+          <div class="ndw-faq__item" data-reveal>
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Fazem landing page pra qualquer tipo de negócio?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Sim. Cada projeto é pensado de acordo com a oferta, o público e o objetivo da empresa.</p></div></div>
+          </div>
+          <div class="ndw-faq__item" data-reveal style="--d:.06s">
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Já tenho uma página. Vocês conseguem melhorar?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Sim. Posso reconstruir a que você já tem ou criar uma estrutura nova do zero.</p></div></div>
+          </div>
+          <div class="ndw-faq__item" data-reveal style="--d:.12s">
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Preciso levar a copy pronta?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Não necessariamente. Dependendo do projeto, a comunicação também é construída junto durante o desenvolvimento.</p></div></div>
+          </div>
+          <div class="ndw-faq__item" data-reveal style="--d:.18s">
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Dá pra integrar com WhatsApp, formulário ou checkout?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Sim, as integrações entram de acordo com o que a sua página precisar.</p></div></div>
+          </div>
+          <div class="ndw-faq__item" data-reveal style="--d:.24s">
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Quanto tempo leva?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Depende do escopo, mas a maioria dos projetos vai ao ar poucos dias depois que eu recebo os materiais.</p></div></div>
+          </div>
+          <div class="ndw-faq__item" data-reveal style="--d:.3s">
+            <button class="ndw-faq__q" type="button" aria-expanded="false">Por que não fazer com alguém mais barato?<span class="ndw-faq__plus"></span></button>
+            <div class="ndw-faq__a"><div><p>Dá pra fazer, e às vezes funciona. O ponto é onde o custo aparece depois: a página você paga uma vez, o anúncio você paga todo mês. Uma página que converte menos faz você gastar o mesmo em tráfego pra trazer menos cliente, e essa diferença costuma passar o valor do projeto em poucas semanas.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 7. CTA FINAL ===================== -->
+  <section class="ndw-final">
+    <div class="ndw-hero__bg">
+      <canvas class="ndw-fx" aria-hidden="true"></canvas>
+      <div class="ndw-final__glow"></div>
+      <div class="ndw-beam"></div>
+      <div class="ndw-horizon"></div>
+    </div>
+    <div class="ndw-wrap">
+      <h2 class="ndw-title ndw-title--center" data-reveal><span class="ndw-fade">Seu negócio já existe.</span> <span class="ndw-dim ndw-serif">Sua Landing precisa mostrar isso.</span></h2>
+      <p class="ndw-lead" data-reveal style="--d:.12s">Agora falta uma página à altura da sua oferta.</p>
+      <div class="ndw-final__cta" data-reveal style="--d:.24s">
+        <a class="ndw-btn" data-wa data-magnetic href="#">
+          Quero minha landing
+          <span class="ndw-btn__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <span class="ndw-btn-note" style="color:var(--muted)">Vamos conversar sobre o seu projeto.</span>
+      </div>
+
+      <div class="ndw-contact" data-reveal style="--d:.36s">
+        <div class="ndw-contact__av"><img src="https://ferandrade.com.br/wp-content/uploads/2025/11/bg_isnta.jpg" alt="Fernando Andrade" loading="lazy" decoding="async"></div>
+        <div>
+          <strong>Fernando Andrade</strong>
+          <a class="ndw-contact__ig" href="https://instagram.com/ferandrade.web" target="_blank" rel="noopener">@ferandrade.web</a>
+        </div>
+        <a class="ndw-contact__wa" data-wa href="#" aria-label="Falar no WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></svg></a>
+      </div>
+
+      <div class="ndw-wordmark" aria-hidden="true">Fernando Andrade</div>
+      <footer class="ndw-foot">
+        <span>© <span data-year>2026</span> Fernando Andrade · Landing Pages para negócios</span>
+        <button class="ndw-top" type="button">Voltar ao topo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+      </footer>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  /* ============ CONFIG ============ */
+  var NDW_WA  = "5519989134390"; // DDI + DDD + número, só dígitos
+  var NDW_MSG = "Oi Fernando, tudo bem? Vim pela sua página e quero uma Landing Page pro meu negócio. Pode me passar um orçamento?";
+
+  var root = document.querySelector('.ndw');
+  if(!root || root.dataset.ready) return;
+  root.dataset.ready = '1';
+  root.classList.add('ndw--js');
+
+  /* se algum dia isto for embedado sem <head> próprio, garante a viewport */
+  if(!document.querySelector('meta[name="viewport"]')){
+    var mv = document.createElement('meta');
+    mv.name = 'viewport'; mv.content = 'width=device-width, initial-scale=1';
+    (document.head || document.documentElement).appendChild(mv);
+  }
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine   = window.matchMedia('(pointer: fine)').matches;
+  var $  = function(s,c){return (c||root).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||root).querySelectorAll(s))};
+  var clamp = function(v,a,b){return Math.min(b,Math.max(a,v))};
+
+  /* ---------- WhatsApp + conversão do Google Ads ---------- */
+  var waUrl = 'https://wa.me/' + NDW_WA + '?text=' + encodeURIComponent(NDW_MSG);
+  $$('[data-wa]').forEach(function(a){
+    a.href = waUrl; a.target = '_blank'; a.rel = 'noopener';
+    a.addEventListener('click', function(){
+      /* abre em nova aba, então só registra o evento e não segura a navegação */
+      if(typeof window.gtag_report_conversion === 'function') window.gtag_report_conversion();
+      if(window.dataLayer) window.dataLayer.push({event:'whatsapp_click', link_text:(a.innerText||'').trim().slice(0,60)});
+    });
+  });
+
+  var y = $('[data-year]'); if(y) y.textContent = new Date().getFullYear();
+
+  /* ---------- Altura das janelas dos cases (alimenta o scroll do print) ---------- */
+  function setScreenHeights(){
+    $$('.ndw-case__screen').forEach(function(s){ s.style.setProperty('--sh', s.clientHeight + 'px'); });
+  }
+  setScreenHeights();
+  window.addEventListener('resize', setScreenHeights);
+  $$('.ndw-case__screen img').forEach(function(i){ i.addEventListener('load', setScreenHeights); });
+
+  /* ---------- Reveal ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  },{threshold:.14, rootMargin:'0px 0px -6% 0px'});
+  $$('[data-reveal]').forEach(function(el){ io.observe(el); });
+
+  /* ---------- Fundo global: campo de partículas em parallax (profundidade) ---------- */
+  (function(){
+    var cv = $('.ndw-depth'); if(!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var pts = [], docH = 1, raf = 0;
+
+    function size(){
+      w = cv.offsetWidth; h = cv.offsetHeight;
+      if(!w || !h) return;
+      cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      docH = Math.max(1, document.documentElement.scrollHeight - h);
+      pts = [];
+      var n = Math.min(190, Math.round(w*h/12000));
+      for(var i=0;i<n;i++){
+        var d = Math.random();                       // 0 = longe, 1 = perto
+        pts.push({
+          x:Math.random(),                            // fração da largura
+          y:Math.random()*2.4,                        // espalhado por 2.4 telas
+          r:.25 + d*1.5,
+          a:(.1 + d*.5)*(.5 + Math.random()*.5),
+          sp:.12 + d*.85                              // profundidade = velocidade
+        });
+      }
+    }
+
+    function draw(sy){
+      if(!w || !h) return;
+      ctx.clearRect(0,0,w,h);
+      var p = docH ? sy/docH : 0;
+      for(var i=0;i<pts.length;i++){
+        var s = pts[i];
+        var y = ((s.y - p*s.sp*2.4) % 2.4 + 2.4) % 2.4;   // rola e dá a volta
+        if(y > 1.05) continue;
+        ctx.globalAlpha = s.a;
+        ctx.fillStyle = '#C9D6F2';
+        ctx.beginPath(); ctx.arc(s.x*w, y*h, s.r, 0, 6.283); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+
+    size(); draw(window.scrollY);
+    window.addEventListener('resize', function(){ size(); draw(window.scrollY); });
+    window.addEventListener('scroll', function(){
+      if(raf) return;
+      raf = requestAnimationFrame(function(){ raf = 0; draw(window.scrollY); });
+    },{passive:true});
+  })();
+
+  /* ---------- Feixe de energia: roda na hero e no rodapé ---------- */
+  $$('.ndw-fx').forEach(function(cv){
+    if(!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var beamEl = cv.parentElement ? cv.parentElement.querySelector('.ndw-beam') : null;
+    var w = 0, h = 0, bx = 0, bb = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var stars = [], ribbons = [], parts = [], t = 0, visible = true;
+    function rnd(a,b){ return a + Math.random()*(b-a); }
+
+    function size(){
+      w = cv.offsetWidth; h = cv.offsetHeight;
+      if(!w || !h) return;
+      cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr);
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+
+      bx = w*.70;
+      if(beamEl){
+        var br = beamEl.getBoundingClientRect(), cr = cv.getBoundingClientRect();
+        if(br.width) bx = br.left + br.width/2 - cr.left;
+      }
+      bb = h*.78;
+
+      stars = [];
+      var n = Math.min(220, Math.round(w*h/9000));
+      for(var i=0;i<n;i++) stars.push({x:Math.random()*w, y:Math.random()*h*.82, r:rnd(.2,1.3), a:rnd(.14,.7), s:rnd(.004,.022), p:rnd(0,6.3)});
+
+      ribbons = [];
+      for(var j=0;j<5;j++) ribbons.push({amp:rnd(9,15)+j*9, fr:rnd(.0028,.0046)+j*.0007, sp:.5+j*.22, lw:j===0?2:1.1, al:j===0?.5:Math.max(.05,.19-j*.03), ph:rnd(0,6.3)});
+
+      parts = [];
+      var pn = Math.max(10, Math.min(30, Math.round(h/32)));
+      for(var k=0;k<pn;k++) parts.push({p:Math.random(), sp:rnd(.0016,.0045), off:rnd(-16,16), r:rnd(.7,1.9), a:rnd(.3,.9)});
+    }
+
+    function ribbonX(y, rb){
+      var k = bb ? y/bb : 0;
+      var taper = Math.sin(Math.PI*Math.min(k,1)*.9)*(1 - k*.45);
+      return bx + Math.sin(y*rb.fr + t*rb.sp + rb.ph)*rb.amp*taper;
+    }
+
+    function draw(){
+      if(!w || !h) return;
+      ctx.clearRect(0,0,w,h);
+
+      for(var i=0;i<stars.length;i++){
+        var s = stars[i];
+        ctx.globalAlpha = reduce ? s.a : s.a*(.5+.5*Math.sin(t*s.s*60 + s.p));
+        ctx.fillStyle = '#fff';
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.283); ctx.fill();
+      }
+
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = 1;
+      for(var j=0;j<ribbons.length;j++){
+        var rb = ribbons[j];
+        var g = ctx.createLinearGradient(0,0,0,bb);
+        g.addColorStop(0,'rgba(150,180,255,0)');
+        g.addColorStop(.3,'rgba(170,198,255,'+rb.al+')');
+        g.addColorStop(.74,'rgba(228,240,255,'+Math.min(1,rb.al*1.2)+')');
+        g.addColorStop(1,'rgba(200,220,255,0)');
+        ctx.strokeStyle = g; ctx.lineWidth = rb.lw;
+        ctx.beginPath();
+        for(var y=0;y<=bb;y+=8){
+          var x = ribbonX(y, rb);
+          if(y===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+      }
+
+      var core = ribbons[0];
+      if(core){
+        for(var k=0;k<parts.length;k++){
+          var pt = parts[k];
+          if(!reduce){ pt.p += pt.sp; if(pt.p > 1) pt.p -= 1; }
+          var py = pt.p*bb;
+          var px = ribbonX(py, core) + pt.off*(1 - pt.p*.6);
+          ctx.globalAlpha = pt.a*Math.sin(Math.PI*pt.p);
+          ctx.fillStyle = '#DCE8FF';
+          ctx.beginPath(); ctx.arc(px, py, pt.r, 0, 6.283); ctx.fill();
+        }
+
+        var pulse = reduce ? .6 : .45 + .3*Math.sin(t*1.4);
+        var ix = ribbonX(bb, core);
+        var ig = ctx.createRadialGradient(ix, bb, 0, ix, bb, 150);
+        ig.addColorStop(0,'rgba(210,228,255,'+(.3*pulse)+')');
+        ig.addColorStop(.35,'rgba(150,180,240,'+(.12*pulse)+')');
+        ig.addColorStop(1,'rgba(120,150,220,0)');
+        ctx.globalAlpha = 1; ctx.fillStyle = ig;
+        ctx.beginPath(); ctx.ellipse(ix, bb, 150, 56, 0, 0, 6.283); ctx.fill();
+      }
+
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 1;
+    }
+
+    function loop(){ t += 1/60; if(visible) draw(); requestAnimationFrame(loop); }
+    size(); draw();
+    if(!reduce) loop();
+    window.addEventListener('resize', function(){ size(); draw(); });
+    new IntersectionObserver(function(e){ visible = e[0].isIntersecting; }).observe(cv);
+  });
+
+  /* ---------- Parallax do mouse na composição do hero ---------- */
+  var stack = $('.ndw-stack'), inner = $('.ndw-stack__inner');
+  if(stack && fine && !reduce){
+    var hero = $('.ndw-hero');
+    hero.addEventListener('mousemove', function(e){
+      var r = hero.getBoundingClientRect();
+      var nx = (e.clientX - r.left)/r.width - .5, ny = (e.clientY - r.top)/r.height - .5;
+      $$('.ndw-layer', stack).forEach(function(l){
+        var d = +l.dataset.depth || 10;
+        l.style.setProperty('--px', (-nx*d) + 'px');
+        l.style.setProperty('--py', (-ny*d) + 'px');
+      });
+      inner.style.setProperty('--ry', (-10 + nx*6) + 'deg');
+    });
+    hero.addEventListener('mouseleave', function(){
+      $$('.ndw-layer', stack).forEach(function(l){ l.style.setProperty('--px','0px'); l.style.setProperty('--py','0px'); });
+      inner.style.setProperty('--ry','-10deg');
+    });
+  }
+
+  /* ---------- Spotlight nos cards ---------- */
+  if(fine){
+    $$('[data-spot]').forEach(function(c){
+      c.addEventListener('mousemove', function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* ---------- Botões magnéticos ---------- */
+  if(fine && !reduce){
+    $$('[data-magnetic]').forEach(function(b){
+      b.addEventListener('mousemove', function(e){
+        var r = b.getBoundingClientRect();
+        var x = (e.clientX - r.left - r.width/2)*.22, yy = (e.clientY - r.top - r.height/2)*.3;
+        b.style.transform = 'translate(' + x + 'px,' + yy + 'px)';
+      });
+      b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
+    });
+  }
+
+  /* ---------- Frase que acende palavra por palavra ---------- */
+  var st = $('[data-words]'), words = [];
+  if(st){
+    $$('span', st).forEach(function(part){
+      var cls = part.className, txt = part.textContent.trim().split(/\s+/);
+      part.innerHTML = txt.map(function(w, i){
+        return '<span class="w ' + cls + (i === txt.length-1 && cls === 'p2' ? ' last' : '') + '">' + w + '</span>';
+      }).join(' ');
+    });
+    words = $$('.w', st);
+  }
+
+  /* ---------- Fluxo (problema → solução): alterna sozinho em loop ---------- */
+  var flow = $('.ndw-flow'), flowTimer = null, flowResume = null;
+  var FLOW_CYCLE = 3800; // acompanha a duração da animação do pulso
+  function setFlow(state){ if(flow && flow.dataset.state !== state) flow.dataset.state = state; }
+  function flowToggle(){ setFlow(flow.dataset.state === 'bad' ? 'good' : 'bad'); }
+  function flowAutoStart(){ if(flow && !flowTimer && !reduce) flowTimer = setInterval(flowToggle, FLOW_CYCLE); }
+  function flowAutoStop(){ if(flowTimer){ clearInterval(flowTimer); flowTimer = null; } }
+  if(flow){
+    $('.ndw-switch', flow).addEventListener('click', function(){
+      flowAutoStop(); clearTimeout(flowResume);
+      flowToggle();
+      flowResume = setTimeout(flowAutoStart, 9000); // devolve o controle pro automático
+    });
+    new IntersectionObserver(function(e){
+      if(e[0].isIntersecting) flowAutoStart(); else flowAutoStop();
+    },{threshold:.3}).observe(flow);
+  }
+
+  /* ---------- Timeline ---------- */
+  var steps = $('.ndw-steps'), stepEls = steps ? $$('.ndw-step', steps) : [];
+
+  /* ---------- Bloco de alívio (reage à rolagem) ---------- */
+  var relief = $('.ndw-relief'), reliefJobs = relief ? $$('.ndw-relief__jobs span', relief) : [];
+
+  /* ---------- Slider de cases ---------- */
+  (function(){
+    var slider = $('.ndw-slider'); if(!slider) return;
+    var track  = $('.ndw-slider__track', slider);
+    var cases  = $$('.ndw-case', slider);
+    var bar    = $('.ndw-slider__bar i', slider);
+    var count  = $('.ndw-slider__count', slider);
+    var prev   = $('[data-slide="-1"]', slider);
+    var next   = $('[data-slide="1"]', slider);
+    var more   = $('.ndw-slider__more', slider);
+    var expand = $('[data-expand]', slider);
+    /* começa só com os 4 em destaque; os extras entram se a pessoa pedir */
+    var visiveis = function(){ return cases.filter(function(c){ return !c.hidden; }); };
+    var idx = 0, total = visiveis().length;
+    if(!total) return;
+
+    var pad = function(n){ return (n < 10 ? '0' : '') + n; };
+
+    /* nada roda sozinho: o print só desce quando a pessoa pede */
+    cases.forEach(function(c){
+      var btn = c.querySelector('.ndw-case__play');
+      if(btn) btn.addEventListener('click', function(){ c.classList.add('is-playing'); });
+    });
+
+    function render(){
+      var vis = visiveis();
+      total = vis.length;
+      idx = clamp(idx, 0, total - 1);
+      track.style.transform = 'translateX(' + (-idx*100) + '%)';
+      slider.style.setProperty('--sp', (idx + 1)/total);
+      if(count) count.innerHTML = '<b>' + pad(idx + 1) + '</b> / ' + pad(total);
+      if(prev) prev.disabled = idx === 0;
+      if(next) next.disabled = idx === total - 1;
+      /* ao sair do slide, ele volta pro topo da página */
+      vis.forEach(function(c, i){ if(i !== idx) c.classList.remove('is-playing'); });
+    }
+    function go(d){ idx = clamp(idx + d, 0, total - 1); render(); }
+
+    if(prev) prev.addEventListener('click', function(){ go(-1); });
+    if(next) next.addEventListener('click', function(){ go(1); });
+
+    if(expand) expand.addEventListener('click', function(){
+      $$('[data-extra]', slider).forEach(function(c){ c.hidden = false; });
+      if(more) more.hidden = true;
+      idx = 4;              // já leva pro primeiro projeto novo
+      render();
+    });
+
+    /* arrastar no touch */
+    var x0 = null, dx = 0;
+    track.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; dx = 0; },{passive:true});
+    track.addEventListener('touchmove', function(e){ if(x0 !== null) dx = e.touches[0].clientX - x0; },{passive:true});
+    track.addEventListener('touchend', function(){
+      if(x0 !== null && Math.abs(dx) > 45) go(dx < 0 ? 1 : -1);
+      x0 = null; dx = 0;
+    });
+
+    /* setas do teclado quando o slider está em foco */
+    slider.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); go(-1); }
+      if(e.key === 'ArrowRight'){ e.preventDefault(); go(1); }
+    });
+
+    render();
+  })();
+
+  /* ---------- Contador do preço ---------- */
+  var price = $('[data-count]');
+  if(price){
+    var target = +price.dataset.count, fmt = function(n){ return Math.round(n).toLocaleString('pt-BR'); };
+    new IntersectionObserver(function(e, obs){
+      if(!e[0].isIntersecting) return; obs.disconnect();
+      if(reduce){ price.textContent = fmt(target); return; }
+      var t0 = null, dur = 1600;
+      (function tick(ts){
+        if(!t0) t0 = ts;
+        var p = clamp((ts - t0)/dur, 0, 1), k = 1 - Math.pow(1 - p, 4);
+        price.textContent = fmt(target*k);
+        if(p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    },{threshold:.5}).observe(price);
+    price.textContent = '0';
+  }
+
+  /* ---------- Nav ---------- */
+  var nav = $('.ndw-nav'), lastY = window.scrollY, navLinks = $$('.ndw-nav__links a');
+  var sections = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+
+  /* ---------- Marca d'água do rodapé: ajusta pra caber exata no container ---------- */
+  var wordmark = $('.ndw-wordmark');
+  function fitWordmark(){
+    if(!wordmark || !wordmark.parentElement || !document.createRange) return;
+    var box = wordmark.parentElement.clientWidth;
+    if(!box) return;
+    wordmark.style.setProperty('--wm-size','100px');
+    /* scrollWidth de um bloco nunca fica menor que a caixa, então mede o texto em si */
+    var range = document.createRange();
+    range.selectNodeContents(wordmark);
+    var natural = range.getBoundingClientRect().width;
+    if(!natural) return;
+    wordmark.style.setProperty('--wm-size', Math.min(176, Math.floor(100*box/natural)) + 'px');
+  }
+  fitWordmark();
+  window.addEventListener('resize', fitWordmark);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(fitWordmark);
+
+  /* ---------- Loop de scroll ---------- */
+  var ticking = false;
+  function onScroll(){
+    var sy = window.scrollY, vh = window.innerHeight;
+
+    // nav
+    if(nav){
+      nav.classList.toggle('is-scrolled', sy > 40);
+      nav.classList.toggle('is-hidden', sy > lastY && sy > 500);
+      var docH = document.documentElement.scrollHeight - vh;
+      nav.style.setProperty('--p', docH > 0 ? clamp(sy/docH,0,1) : 0);
+      var current = -1;
+      sections.forEach(function(s, i){ if(s && s.getBoundingClientRect().top < vh*.4) current = i; });
+      navLinks.forEach(function(a, i){ a.classList.toggle('is-active', i === current); });
+    }
+    lastY = sy;
+
+    // hero: composição se aplaina ao rolar
+    if(inner && !reduce){
+      var hp = clamp(sy/(vh*.9), 0, 1);
+      inner.style.setProperty('--rx', (6 - hp*8) + 'deg');
+      inner.style.setProperty('--sy', (hp*-40) + 'px');
+    }
+
+    // frase
+    if(words.length){
+      var r = st.getBoundingClientRect();
+      var p = clamp((vh*.85 - r.top)/(r.height + vh*.35), 0, 1);
+      var n = Math.round(p*words.length*1.15);
+      words.forEach(function(w, i){ w.classList.toggle('on', i < n); });
+    }
+
+    // timeline
+    if(steps){
+      var sr = steps.getBoundingClientRect(), vertical = window.innerWidth <= 820;
+      var sp = clamp((vh*.72 - sr.top)/(sr.height*.85 + vh*.2), 0, 1);
+      steps.style.setProperty('--p', sp);
+      stepEls.forEach(function(s){
+        var pos = vertical ? s.offsetTop/steps.offsetHeight : s.offsetLeft/steps.offsetWidth;
+        s.classList.toggle('is-on', sp >= pos + .02 || sp > .98);
+      });
+    }
+
+    // bloco de alívio: barra + tarefas concluídas
+    if(relief){
+      var rr = relief.getBoundingClientRect();
+      var rp = clamp((vh*.88 - rr.top)/(rr.height + vh*.3), 0, 1);
+      relief.style.setProperty('--rp', rp);
+      var jn = Math.round(rp*reliefJobs.length*1.25);
+      reliefJobs.forEach(function(j, i){ j.classList.toggle('is-done', i < jn); });
+    }
+
+    // marca d'água sobe conforme o scroll chega ao fim (funciona em qualquer altura de tela)
+    if(wordmark && !reduce){
+      var end = document.documentElement.scrollHeight - vh;
+      var wp = end > 0 ? clamp((sy - end + vh*.8)/(vh*.8), 0, 1) : 1;
+      wordmark.style.setProperty('--wy', (40 - wp*40) + 'px');
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if(!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  /* ---------- FAQ ---------- */
+  $$('.ndw-faq__item').forEach(function(item){
+    var q = $('.ndw-faq__q', item);
+    q.addEventListener('click', function(){
+      var open = !item.classList.contains('is-open');
+      $$('.ndw-faq__item.is-open').forEach(function(o){ o.classList.remove('is-open'); $('.ndw-faq__q', o).setAttribute('aria-expanded','false'); });
+      if(open){ item.classList.add('is-open'); q.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  /* ---------- Vídeo ---------- */
+  $$('.ndw-video').forEach(function(v){
+    var src = v.dataset.video;
+    var isFile = /\.(mp4|webm|mov)(\?|$)/i.test(src || '');
+
+    /* lê a proporção real do arquivo pra moldura não ficar com sobra preta */
+    if(isFile){
+      var probe = document.createElement('video');
+      probe.preload = 'metadata'; probe.muted = true; probe.src = src;
+      probe.addEventListener('loadedmetadata', function(){
+        if(probe.videoWidth && probe.videoHeight){
+          v.style.setProperty('--vr', probe.videoWidth + '/' + probe.videoHeight);
+          v.classList.toggle('is-portrait', probe.videoHeight > probe.videoWidth);
+        }
+      });
+
+      /* sem imagem de capa, usa um frame do próprio vídeo como poster */
+      var poster = $('.ndw-video__poster', v);
+      if(poster && !poster.querySelector('img,video')){
+        poster.insertAdjacentHTML('beforeend',
+          '<video src="' + src + '#t=0.6" muted playsinline preload="metadata" tabindex="-1" aria-hidden="true"></video>');
+      }
+    }
+
+    v.addEventListener('click', function(){
+      if(!src || v.classList.contains('is-playing')) return;
+      v.classList.add('is-playing');
+      if(isFile){
+        v.insertAdjacentHTML('beforeend','<video src="'+src+'" controls autoplay playsinline></video>');
+      } else {
+        var u = src + (src.indexOf('?') > -1 ? '&' : '?') + 'autoplay=1';
+        v.insertAdjacentHTML('beforeend','<iframe src="'+u+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>');
+      }
+    });
+  });
+
+  /* ---------- Voltar ao topo ---------- */
+  var top = $('.ndw-top');
+  if(top) top.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto' : 'smooth'}); });
+
+  /* ---------- Âncoras suaves ---------- */
+  $$('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href'); if(id.length < 2) return;
+      var t = document.querySelector(id); if(!t) return;
+      e.preventDefault();
+      window.scrollTo({top: t.getBoundingClientRect().top + window.scrollY - 20, behavior: reduce ? 'auto' : 'smooth'});
+    });
+  });
+})();
+</script>
+
+<!-- Google Ads (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-966687745"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-966687745');
+
+  /* conversão de clique no WhatsApp */
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-966687745/bqtECPmUtoEdEIH4-cwD',
+      'value': 0.0,
+      'currency': 'BRL',
+      'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
+<!-- Microsoft Clarity: sobe depois do load pra não disputar banda com o LCP -->
+<script>
+window.addEventListener('load', function(){
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "ymdntpprd9");
+});
+</script>
+
+</body>
+</html>
